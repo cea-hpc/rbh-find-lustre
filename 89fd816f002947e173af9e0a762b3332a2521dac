@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab502857_9a73cada",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-03-28T08:32:10Z",
+      "side": 1,
+      "message": "This is the first patch containing all the initial files.\nSome of them may be useless (looking at config.h.in), but since I\u0027m not sure, I decided to let them in.\nAlso, I didn\u0027t really check that all the includes are useful for the time being, I\u0027ll do that for the next patchset, after a first batch of reviews.",
+      "revId": "89fd816f002947e173af9e0a762b3332a2521dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

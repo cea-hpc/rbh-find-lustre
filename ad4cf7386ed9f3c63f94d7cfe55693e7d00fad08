@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32032fac_7d6a4067",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "suggest: I think we can limit ourselves to rbh-find, the relation to find is implicit.",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dadc871_c946d031",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "minor: I think rbh-lfind is more appropriate here",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 15
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c50ab065_8d60f8f5",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "minor: again I think rbh-lfind is more appropriate",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 15
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d98aa72_fff15060",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "suggest: either \"some features specific to Lustre\" or \"some Lustre specific features\"",
+      "range": {
+        "startLine": 47,
+        "startChar": 5,
+        "endLine": 47,
+        "endChar": 22
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b20ff02a_85863742",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "minor: rbh-lfind",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 15
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0b535f1_cbfe365e",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "minor: is it necessary to use a list here ? It\u0027s not the case line 18. Also, if a list is supported, I assume we can declare both arguments in one statement.",
+      "range": {
+        "startLine": 21,
+        "startChar": 22,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7715ddb4_39914b97",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-29T14:34:09Z",
+      "side": 1,
+      "message": "nit: lfind ?",
+      "range": {
+        "startLine": 45,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 18
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

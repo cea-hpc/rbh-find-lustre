@@ -95,6 +95,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db746ff0_d4d4afad",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-30T09:42:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "39ada546_d6d3ddbd",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 15
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c50ab065_8d60f8f5",
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "Same answer as before.",
       "parentUuid": "c50ab065_8d60f8f5",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 15
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80c6ef13_37c93c2f",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-30T09:42:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "442b8534_8df7e2f0",
       "range": {
         "startLine": 45,
         "startChar": 0,
@@ -320,6 +368,30 @@
       "side": 1,
       "message": "No, I\u0027d prefer to keep the main source file with the complete name, as \"rbh-lfind\" is just to ease the CLI\u0027s use.",
       "parentUuid": "7715ddb4_39914b97",
+      "range": {
+        "startLine": 45,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 18
+      },
+      "revId": "ad4cf7386ed9f3c63f94d7cfe55693e7d00fad08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf505cb3_b2a6e331",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-30T09:42:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5dbdbe19_9cd58de8",
       "range": {
         "startLine": 45,
         "startChar": 7,

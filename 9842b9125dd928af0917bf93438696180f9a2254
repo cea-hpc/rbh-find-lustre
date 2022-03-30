@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9d4050d_e8278396",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-30T09:42:10Z",
+      "side": 1,
+      "message": "typo: you forgot to remove this",
+      "range": {
+        "startLine": 45,
+        "startChar": 30,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "9842b9125dd928af0917bf93438696180f9a2254",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0674fdca_55159f57",
+        "filename": "meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-03-30T09:42:10Z",
+      "side": 1,
+      "message": "nit: I think I know why this extension is here. I think I\u0027m the one who introduced it in rbh-find because of a range case statement in a switch for the \u0027-perm\u0027 option. I don\u0027t think this option is necessary here. Unless we plan on using non standard features in this project as well.",
+      "range": {
+        "startLine": 19,
+        "startChar": 23,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "9842b9125dd928af0917bf93438696180f9a2254",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

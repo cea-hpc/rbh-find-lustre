@@ -41,8 +41,9 @@ lustre_str2command_line_token(const char *string)
 {
     switch (string[0]) {
     case '-':
-        if (!strcmp(&string[1], "placeholder"))
+        if (!strcmp(&string[1], "hsm-state"))
             return CLT_PREDICATE;
+        break;
     }
 
     return str2command_line_token(string);
@@ -67,8 +68,8 @@ lustre_parse_predicate(struct find_context *ctx, int *arg_idx)
      * precise and meaningul error messages.
      */
     switch (predicate) {
-    case PRED_PLACEHOLDER:
-        filter = placeholder2filter(ctx->argv[++i]);
+    case PRED_HSM_STATE:
+        filter = hsm_state2filter(ctx->argv[++i]);
         break;
     default:
         filter = core_parse_predicate(ctx, &i);
@@ -83,7 +84,6 @@ lustre_parse_predicate(struct find_context *ctx, int *arg_idx)
 int
 main(int _argc, char *_argv[])
 {
-    struct find_context ctx = { .backend_count = 0, .action_done = false };
     struct rbh_filter_sort *sorts = NULL;
     struct rbh_filter *filter;
     size_t sorts_count = 0;

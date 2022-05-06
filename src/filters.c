@@ -7,6 +7,7 @@
 
 #include <error.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sysexits.h>
 
 #include <lustre/lustreapi.h>
@@ -17,7 +18,10 @@
 #include "filters.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
-    [PRED_HSM_STATE] = {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "hsm_state"},
+    [PRED_FID - PRED_MIN] =       {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                   .xattr = "fid"},
+    [PRED_HSM_STATE - PRED_MIN] = {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                   .xattr = "hsm_state"},
 };
 
 static enum hsm_states
@@ -81,11 +85,32 @@ hsm_state2filter(const char *hsm_state)
         op = RBH_FOP_EQUAL;
 
     filter = rbh_filter_compare_uint32_new(
-            op, &predicate2filter_field[PRED_HSM_STATE], state
+            op, &predicate2filter_field[PRED_HSM_STATE - PRED_MIN], state
             );
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "hsm_state2filter");
+
+    return filter;
+}
+
+struct rbh_filter *
+fid2filter(const char *fid)
+{
+    struct rbh_filter *filter;
+    struct lu_fid lu_fid;
+    int rc;
+
+    rc = llapi_fid_parse(fid, &lu_fid, NULL);
+    if (rc)
+        error(EX_USAGE, 0, "invalid fid parsing: %s", strerror(-rc));
+
+    filter = rbh_filter_compare_string_new(
+            RBH_FOP_EQUAL, &predicate2filter_field[PRED_FID - PRED_MIN], fid
+            );
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "fid2filter");
 
     return filter;
 }

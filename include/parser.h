@@ -13,7 +13,8 @@
 enum lustre_predicate {
     PRED_INITIAL = 128,
 
-    PRED_HSM_STATE = PRED_INITIAL,
+    PRED_FID = PRED_INITIAL,
+    PRED_HSM_STATE,
 
     PRED_MAX,
 };

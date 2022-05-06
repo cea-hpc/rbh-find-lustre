@@ -20,14 +20,23 @@ str2lustre_predicate(const char *string)
 {
     assert(string[0] == '-');
 
-    if (strcmp(&string[1], "hsm-state") == 0)
-        return PRED_HSM_STATE;
+    switch (string[1]) {
+    case 'f':
+        if (strcmp(&string[2], "id") == 0)
+            return PRED_FID;
+        break;
+    case 'h':
+        if (strcmp(&string[2], "sm-state") == 0)
+            return PRED_HSM_STATE;
+        break;
+    }
 
     return str2predicate(string);
 }
 
 static const char *__lustre_predicate2str[] = {
     [PRED_HSM_STATE]  = "hsm-state",
+    [PRED_FID]  = "fid",
 };
 
 const char *

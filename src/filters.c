@@ -18,6 +18,7 @@
 
 static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_HSM_STATE] = {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "hsm_state"},
+    [PRED_FID] =       {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "fid"},
 };
 
 static enum hsm_states
@@ -86,6 +87,40 @@ hsm_state2filter(const char *hsm_state)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "hsm_state2filter");
+
+    return filter;
+}
+
+struct rbh_filter *
+fid2filter(const char *fid)
+{
+    struct rbh_filter *filter;
+    const char *ptr = fid;
+    int count = 0;
+
+    do {
+        if (ptr[0] != '0' || ptr[1] != 'x')
+            error(EX_USAGE, 0, "fid sections must start with '0x'");
+
+        if (++count > 3)
+            error(EX_USAGE, 0, "fid requires 3 sections separated by ':'");
+
+        ptr = strchr(ptr + 1, ':');
+        if (ptr == NULL)
+            break;
+
+        ptr++;
+    } while (true);
+
+    if (count != 3)
+        error(EX_USAGE, 0, "fid requires 3 sections separated by ':'");
+
+    filter = rbh_filter_compare_string_new(
+            RBH_FOP_EQUAL, &predicate2filter_field[PRED_FID], fid
+            );
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "fid2filter");
 
     return filter;
 }

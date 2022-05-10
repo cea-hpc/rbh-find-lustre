@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdc4f555_c10c6096",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T08:40:12Z",
+      "side": 1,
+      "message": "defect: I don\u0027t see a copytool being launched inside this test, this will do nothing.",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 37
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c78b13cd_1c918d7b",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T08:40:12Z",
+      "side": 1,
+      "message": "minor: It would be better to wait for the state of the file to be archived with `lfs hsm_state f`.",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 15
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "359fb17f_b6e82999",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T08:40:12Z",
+      "side": 1,
+      "message": "minor: this loop can be simplified:\n\nfor state in ${states[@]}; do\n    touch $state\n    sudo lfs hsm_set --$state $state\ndone\n\nIn think most of your loops can be simplified this way (probably not the one line 164).",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 131,
+        "endChar": 8
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca5d36f_37103177",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T08:40:12Z",
+      "side": 1,
+      "message": "minor: you can use seq for that: seq 0 $length",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "538be1a9_011cf7c0",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T08:40:12Z",
+      "side": 1,
+      "message": "minor: I think you should at least put a comment to explain what this magic bashism do or better yet, put it in a function with an explicit name.",
+      "range": {
+        "startLine": 168,
+        "startChar": 34,
+        "endLine": 168,
+        "endChar": 39
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

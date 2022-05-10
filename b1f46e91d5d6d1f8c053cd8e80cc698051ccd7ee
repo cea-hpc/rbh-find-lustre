@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce99f161_8fb982c4",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:27:06Z",
+      "side": 1,
+      "message": "minor: you can also check for match braces. If the first character is an open brace, the last one should be also.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 10
+      },
+      "revId": "b1f46e91d5d6d1f8c053cd8e80cc698051ccd7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "516262b7_2ca236cc",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:27:06Z",
+      "side": 1,
+      "message": "suggest: a simpler implementation (but probably more expensive in terms of computation) would be to use scanf with the SFID and RFID macros. If scanf fails, the input is wrong. I think you still have to check the braces yourself though.",
+      "range": {
+        "startLine": 101,
+        "startChar": 4,
+        "endLine": 101,
+        "endChar": 8
+      },
+      "revId": "b1f46e91d5d6d1f8c053cd8e80cc698051ccd7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f8a9b0d_16696fd5",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:27:06Z",
+      "side": 1,
+      "message": "minor: you should break at this point",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 106,
+        "endChar": 75
+      },
+      "revId": "b1f46e91d5d6d1f8c053cd8e80cc698051ccd7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0434287a_cf663366",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:27:06Z",
+      "side": 1,
+      "message": "minor: a message such as:\n\"invalid argument to -fid: %s\", fid\n\nwould be more useful instead of the ones lines 103, 106 and 116",
+      "range": {
+        "startLine": 116,
+        "startChar": 7,
+        "endLine": 116,
+        "endChar": 71
+      },
+      "revId": "b1f46e91d5d6d1f8c053cd8e80cc698051ccd7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "532356a1_b17c99a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:29:07Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary to copy/paste the code testing rbh-find. A simple test script with a few commands seems to be enough?",
+      "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

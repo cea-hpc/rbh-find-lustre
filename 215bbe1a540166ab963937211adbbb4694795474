@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6675fe6f_f8acd2bb",
+        "filename": "include/parser.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T07:15:31Z",
+      "side": 1,
+      "message": "style: min/max or first/last",
+      "range": {
+        "startLine": 14,
+        "startChar": 9,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "215bbe1a540166ab963937211adbbb4694795474",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e0a1d3b2_f94180d7",
         "filename": "src/filters.c",
         "patchSetId": 3

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e238ed1_dbe23c1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "This patch is removed and squashed with the one implementing \"-hsm-state\"",
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdc4f555_c10c6096",
@@ -14,6 +31,30 @@
       "writtenOn": "2022-05-10T08:40:12Z",
       "side": 1,
       "message": "defect: I don\u0027t see a copytool being launched inside this test, this will do nothing.",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 37
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f200eb04_33b64847",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "The goal is not for this command to actually archive the file, but just set the \"archived\" HSM state and the archive id, which can be achieved by calling hsm_archive. So yes, this does not archive, but it\u0027s not supposed to.",
+      "parentUuid": "cdc4f555_c10c6096",
       "range": {
         "startLine": 97,
         "startChar": 8,
@@ -47,6 +88,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e23fb48_2c9263bc",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c78b13cd_1c918d7b",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 15
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "359fb17f_b6e82999",
@@ -60,6 +125,30 @@
       "writtenOn": "2022-05-10T08:40:12Z",
       "side": 1,
       "message": "minor: this loop can be simplified:\n\nfor state in ${states[@]}; do\n    touch $state\n    sudo lfs hsm_set --$state $state\ndone\n\nIn think most of your loops can be simplified this way (probably not the one line 164).",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 131,
+        "endChar": 8
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61d6eb49_1ac36311",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "359fb17f_b6e82999",
       "range": {
         "startLine": 126,
         "startChar": 4,
@@ -93,6 +182,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b609b5_0bb60895",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6ca5d36f_37103177",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "538be1a9_011cf7c0",
@@ -106,6 +219,30 @@
       "writtenOn": "2022-05-10T08:40:12Z",
       "side": 1,
       "message": "minor: I think you should at least put a comment to explain what this magic bashism do or better yet, put it in a function with an explicit name.",
+      "range": {
+        "startLine": 168,
+        "startChar": 34,
+        "endLine": 168,
+        "endChar": 39
+      },
+      "revId": "c5251a7588f8309dfab124d0d244fc1d1facb7d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "784607ad_9b56f202",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:02:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "538be1a9_011cf7c0",
       "range": {
         "startLine": 168,
         "startChar": 34,

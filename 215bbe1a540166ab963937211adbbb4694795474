@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a108ff9f_99053a57",
+        "filename": "include/parser.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:01:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6675fe6f_f8acd2bb",
+      "range": {
+        "startLine": 14,
+        "startChar": 9,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "215bbe1a540166ab963937211adbbb4694795474",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0a1d3b2_f94180d7",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-05-06T09:45:00Z",
       "side": 1,
       "message": "style: is an indentation of size 8 the right one here? 4 is not better?",
+      "range": {
+        "startLine": 84,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 62
+      },
+      "revId": "215bbe1a540166ab963937211adbbb4694795474",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5856a707_8f9d506f",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:01:28Z",
+      "side": 1,
+      "message": "Nope, this is the correct one (imported from rbh-find, so it is consistant)",
+      "parentUuid": "e0a1d3b2_f94180d7",
       "range": {
         "startLine": 84,
         "startChar": 12,

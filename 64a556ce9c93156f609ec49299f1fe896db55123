@@ -16,6 +16,41 @@
       "message": "I don\u0027t think this is necessary to copy/paste the code testing rbh-find. A simple test script with a few commands seems to be enough?",
       "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ce0f56a_6dd188e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:01:52Z",
+      "side": 1,
+      "message": "I do agree this seems a bit overkill when we\u0027re just checking the tool is compatible, so I changed it to a simpler tests containing a few functions of the 3 tests.",
+      "parentUuid": "532356a1_b17c99a2",
+      "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a16de90_75ee74eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T10:01:52Z",
+      "side": 1,
+      "message": "This patch is moved to be the second of the stack",
+      "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

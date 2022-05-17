@@ -22,6 +22,30 @@
       },
       "revId": "5d3907e19203b5f84a245eb4c83b5e4bd15a48f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7beb5c3_79c8a995",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T15:30:10Z",
+      "side": 1,
+      "message": "No, it just means rbh-sync is mandatory for execution. We might change that later, but currently, it\u0027s in all rbh-find tests",
+      "parentUuid": "5a134f4c_214ca125",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 10
+      },
+      "revId": "5d3907e19203b5f84a245eb4c83b5e4bd15a48f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

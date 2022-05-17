@@ -69,6 +69,24 @@
       "parentUuid": "7ce0f56a_6dd188e3",
       "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeeeec3f_4ac30440",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T15:29:22Z",
+      "side": 1,
+      "message": "That was the initial patch, all the rbh-find tests with the executable changed.",
+      "parentUuid": "4e1892c3_591d500d",
+      "revId": "64a556ce9c93156f609ec49299f1fe896db55123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

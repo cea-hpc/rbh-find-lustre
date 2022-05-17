@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb5fcf60_002150d8",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-17T06:34:29Z",
+      "side": 1,
+      "message": "suggest: maybe put this in a sub-script? then mutualize with the first test script of the stack",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 1
+      },
+      "revId": "7098de55a234f6c24ee73ded443ffa7ca77c1681",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

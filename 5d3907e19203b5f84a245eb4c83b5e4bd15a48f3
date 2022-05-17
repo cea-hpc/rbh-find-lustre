@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a134f4c_214ca125",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-17T06:30:03Z",
+      "side": 1,
+      "message": "question: is this the value to indicate the test is skipped?",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 10
+      },
+      "revId": "5d3907e19203b5f84a245eb4c83b5e4bd15a48f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

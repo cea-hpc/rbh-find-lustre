@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9dca138_76180027",
+        "filename": "include/nodeset.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-19T14:52:16Z",
+      "side": 1,
+      "message": "major: I forgot the license here and in nodeset.c",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "ce023a6703d701dc00adca79a59df2307fa35b9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

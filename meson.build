@@ -40,14 +40,26 @@ add_project_arguments(['-DHAVE_CONFIG_H',], language: 'c')
 # "." is necessary for config.h
 include_dirs = include_directories('.', 'include')
 
-executable(
+librbhlfind = static_library(
 	'rbh-lfind',
 	sources: [
-		'rbh-find-lustre.c',
 		'src/filters.c',
 		'src/parser.c',
+		'src/nodeset.c',
 		],
 	dependencies: [librobinhood, librbhfind, liblustre],
+	include_directories: include_dirs
+)
+
+rbh_lfind = declare_dependency(
+	link_with : librbhlfind,
+	include_directories : include_dirs
+)
+
+executable(
+	'rbh-lfind',
+	sources: 'rbh-find-lustre.c',
+	dependencies: [rbh_lfind],
 	include_directories: include_dirs,
 	install: true,
 )

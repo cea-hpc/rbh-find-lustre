@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4aa4fb16_b85f858c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-19T14:58:33Z",
+      "side": 1,
+      "message": "This is the first patch of the 3 implementing the support for the `-ost` predicate.",
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

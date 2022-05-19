@@ -3,6 +3,74 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02689895_c3ebf9d2",
+        "filename": "include/parser.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "btw I was thinking about this a bit again, how about adding PRED_LAST or something to rbh-find\u0027s predicate enum and using PRED_LAST+1 here?\n\nThe values won\u0027t be constant anymore but as long as you don\u0027t start making a librbh-find-lustre that\u0027s not really a problem, and it\u0027ll make things a bit more dynamic although it doesn\u0027t solve the parameter type problem.",
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eca58ba_3e906b55",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "btw this and __lustre_predicate2str lustre-predicate-indexed arrays are pretty wasteful; there is 2k of memory (PRED_MIN * 16 bytes for rbh_filter_field) wasted at the start.\nIncides could be offset by PRED_MIN?",
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94712cfc_1558eedf",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "btw, llapi_fid_parse is new in 2.14 -- this won\u0027t work on old 2.12 lustre machines",
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8433305e_9dd1de21",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "until this is binary-ified to use lu_fid (if ever), should this canonicalize the fid somehow, e.g. re-print from parsed lu_fid?\n\nThis might seem useless but it\u0027s not: fid parse is flexible and will allow e.g. [0x200000:1] as [0x200000:0x1:0x0].\nAlso, presence or absence of brackets might not be obvious",
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c75c95b2_4c0a2831",
         "filename": "tests/test_fid.bash",
         "patchSetId": 3
@@ -44,6 +112,47 @@
         "endLine": 67,
         "endChar": 24
       },
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2d3affb_3edd3d00",
+        "filename": "tests/test_fid.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "just match on 0:0:0 ? I\u0027m pretty sure lustre can\u0027t use it but it should be valid as far as fid_parse is concerned",
+      "parentUuid": "d47fb935_a927f53a",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 24
+      },
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8633287_55593587",
+        "filename": "tests/test_fid.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T23:42:06Z",
+      "side": 1,
+      "message": "I don\u0027t see what removes that dir (there\u0027s a trap in test_compat.bash but not others)",
       "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

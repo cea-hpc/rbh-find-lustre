@@ -15,6 +15,7 @@ enum lustre_predicate {
 
     PRED_FID = PRED_MIN,
     PRED_HSM_STATE,
+    PRED_OST_INDEX,
 
     PRED_MAX,
 };

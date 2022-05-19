@@ -16,6 +16,23 @@
       "message": "This is the first patch of the 3 implementing the support for the `-ost` predicate.",
       "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b7bb986_bb3fc1b2",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-19T15:02:06Z",
+      "side": 1,
+      "message": "major: I should use test_utils here also.",
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

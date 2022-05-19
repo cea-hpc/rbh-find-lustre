@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5e7c887_b74acfaf",
+        "filename": "rbh-find-lustre.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T22:52:49Z",
+      "side": 1,
+      "message": "(open question) should the command line argument be made lowercase as state2filter is case sensitive?\nfind switches (-hsm-state) are case sensitive but argument usually aren\u0027t, although I can\u0027t find any example in GNU find where argument is treated as a token like this",
+      "revId": "5a06070a2b76a705e58624e83af45b132fe95958",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9ad80e5_be7fad76",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T22:52:49Z",
+      "side": 1,
+      "message": "(not sure) iirc hsm_release is asynchronous so this should wait like archived?",
+      "revId": "5a06070a2b76a705e58624e83af45b132fe95958",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

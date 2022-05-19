@@ -23,6 +23,11 @@ cd "$LUSTRE_DIR"
 #                                    TESTS                                     #
 ################################################################################
 
+lfs_find_ost()
+{
+    lfs find . -ost $1 | sed 's/^.//' | sort | xargs
+}
+
 test_invalid()
 {
     if rbh_lfind "rbh:mongo:$testdb" -ost -1; then
@@ -36,6 +41,10 @@ test_invalid()
     if rbh_lfind "rbh:mongo:$testdb" -ost invalid; then
         error "find with an invalid ost index should have failed"
     fi
+
+    if rbh_lfind "rbh:mongo:$testdb" -ost []; then
+        error "find with an empty nodeset should have failed"
+    fi
 }
 
 test_one_match()
@@ -46,8 +55,9 @@ test_one_match()
 
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
 
-    rbh_lfind "rbh:mongo:$testdb" -ost 0 | sort |
-        difflines "/$file"
+    rbh_lfind "rbh:mongo:$testdb" -ost 0 | sort | difflines "/$file"
+
+    rbh_lfind "rbh:mongo:$testdb" -ost [0] | sort | difflines "/$file"
 }
 
 test_none()
@@ -58,15 +68,54 @@ test_none()
 
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
 
-    rbh_lfind "rbh:mongo:$testdb" -ost 1 | sort |
-        difflines
+    rbh_lfind "rbh:mongo:$testdb" -ost 1 | difflines
+}
+
+test_nodeset()
+{
+    local files=()
+
+    for i in {0..5}; do
+        lfs setstripe -i $i -c 1 test_nodeset$i
+    done
+
+    rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
+
+    for i in {0..5}; do
+        rbh_lfind "rbh:mongo:$testdb" -ost [$i] | sort |
+            difflines "/test_nodeset$i"
+
+        rbh_lfind "rbh:mongo:$testdb" -ost $i | sort |
+            difflines "/test_nodeset$i"
+    done
+
+    rbh_lfind "rbh:mongo:$testdb" -ost [4-6,1] | sort |
+        difflines $(lfs_find_ost 1,4,5,6)
+}
+
+test_pfl()
+{
+    lfs setstripe \
+        -E 64k  -c 1 \
+        -E 128k -c 4 \
+        -E -1   -c 6 \
+        test_pfl
+
+    dd if=/dev/urandom of=test_pfl bs=4096 count=256
+
+    rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
+
+    for i in {0..9}; do
+        rbh_lfind "rbh:mongo:$testdb" -ost [$i] | sort |
+            difflines $(lfs_find_ost $i)
+    done
 }
 
 ################################################################################
 #                                     MAIN                                     #
 ################################################################################
 
-declare -a tests=(test_invalid test_one_match test_none)
+declare -a tests=(test_invalid test_one_match test_none test_nodeset test_pfl)
 
 tmpdir=$(mktemp --directory --tmpdir=$LUSTRE_DIR)
 trap "rm -r $tmpdir" EXIT

@@ -22,6 +22,30 @@
       },
       "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d47fb935_a927f53a",
+        "filename": "tests/test_fid.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-19T06:54:17Z",
+      "side": 1,
+      "message": "The echos I just forgot to remove, the \"tr\" is to ensure we check a non-attributed fid. It\u0027s the easiest way I could think of",
+      "parentUuid": "c75c95b2_4c0a2831",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 24
+      },
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

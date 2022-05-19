@@ -15,6 +15,8 @@ project(
 	],
 )
 
+add_project_arguments('-Wno-pedantic', language : 'c')
+
 # Project extentions
 add_project_arguments('-D_GNU_SOURCE', language: 'c')
 

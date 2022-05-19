@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c75c95b2_4c0a2831",
+        "filename": "tests/test_fid.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-19T06:51:15Z",
+      "side": 1,
+      "message": "question: what is the purpose of those lines?",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 24
+      },
+      "revId": "d3e4744f58443f18926e2626f2228eeb5540970d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

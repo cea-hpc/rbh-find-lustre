@@ -5,6 +5,7 @@
  * SPDX-License-Identifer: LGPL-3.0-or-later
  */
 
+#include <ctype.h>
 #include <error.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +21,24 @@
 static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_HSM_STATE] = {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "hsm_state"},
     [PRED_FID] =       {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "fid"},
+    [PRED_OST_INDEX] = {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "ost"},
 };
+
+static int
+str2uint64_t(const char *input, uint64_t *result)
+{
+    uint64_t value;
+    char *end;
+
+    errno = 0;
+    value = strtoull(input, &end, 10);
+    if (errno || (!value && input == end))
+        return -1;
+
+    *result = value;
+
+    return 0;
+}
 
 static enum hsm_states
 str2hsm_states(const char *hsm_state)
@@ -109,6 +127,30 @@ fid2filter(const char *fid)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "fid2filter");
+
+    return filter;
+}
+
+struct rbh_filter *
+ost_index2filter(const char *ost_index)
+{
+    struct rbh_filter *filter;
+    uint64_t index;
+    int rc;
+
+    if (!isdigit(*ost_index))
+        error(EX_USAGE, 0, "invalid ost index: `%s'", ost_index);
+
+    rc = str2uint64_t(ost_index, &index);
+    if (rc)
+        error(EX_USAGE, errno, "invalid ost index: `%s'", ost_index);
+
+    filter = rbh_filter_compare_uint64_new(
+            RBH_FOP_EQUAL, &predicate2filter_field[PRED_OST_INDEX], index
+            );
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "ost_index2filter");
 
     return filter;
 }

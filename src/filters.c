@@ -17,6 +17,7 @@
 #include <rbh-find/filters.h>
 
 #include "filters.h"
+#include "nodeset.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_HSM_STATE] = {.fsentry = RBH_FP_NAMESPACE_XATTRS, .xattr = "hsm_state"},
@@ -131,15 +132,83 @@ fid2filter(const char *fid)
     return filter;
 }
 
-struct rbh_filter *
-ost_index2filter(const char *ost_index)
+static struct rbh_filter *
+filter_uint64_range_new(const struct rbh_filter_field *field, uint64_t start,
+                        uint64_t end)
+{
+    struct rbh_filter *low, *high;
+
+    low = rbh_filter_compare_uint64_new(RBH_FOP_GREATER_OR_EQUAL, field, start);
+    if (low == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_uint64_range_new");
+
+    high = rbh_filter_compare_uint64_new(RBH_FOP_LOWER_OR_EQUAL, field, end);
+    if (high == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_uint64_range_new");
+
+    return filter_and(low, high);
+}
+
+static struct rbh_filter *
+nodeset2filter(const char *ost_index)
+{
+    struct nodeset *n = nodeset_from_str(ost_index);
+    struct rbh_filter *filter = NULL;
+    struct nodeset *tmp = n;
+
+    if (!n)
+        error(EX_USAGE, 0, "invalid ost index: `%s'", ost_index);
+
+    while (tmp) {
+        struct rbh_filter *left_filter = filter;
+
+        switch (tmp->type) {
+        case NODESET_VALUE:
+            filter = rbh_filter_compare_uint64_new(
+                    RBH_FOP_EQUAL, &predicate2filter_field[PRED_OST_INDEX],
+                    tmp->data.value
+                    );
+            if (filter == NULL)
+                error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                              "ost_index2filter");
+            break;
+        case NODESET_RANGE:
+            filter = filter_uint64_range_new(
+                    &predicate2filter_field[PRED_OST_INDEX],
+                    tmp->data.range.begin, tmp->data.range.end
+                    );
+            if (filter == NULL)
+                error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                              "ost_index2filter");
+            break;
+        case NODESET_EMPTY:
+            error(EX_USAGE, 0, "invalid ost index: `%s'", ost_index);
+            break;
+        }
+
+        if (left_filter) {
+            filter = filter_or(left_filter, filter);
+            if (filter == NULL)
+                error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                              "ost_index2filter");
+        }
+
+        tmp = tmp->next;
+    }
+
+    nodeset_destroy(n);
+
+    return filter;
+}
+
+static struct rbh_filter *
+integer2filter(const char *ost_index)
 {
     struct rbh_filter *filter;
     uint64_t index;
     int rc;
-
-    if (!isdigit(*ost_index))
-        error(EX_USAGE, 0, "invalid ost index: `%s'", ost_index);
 
     rc = str2uint64_t(ost_index, &index);
     if (rc)
@@ -151,6 +220,19 @@ ost_index2filter(const char *ost_index)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "ost_index2filter");
+
+    return filter;
+}
+
+struct rbh_filter *
+ost_index2filter(const char *ost_index)
+{
+    struct rbh_filter *filter;
+
+    if (isdigit(*ost_index))
+        filter = integer2filter(ost_index);
+    else
+        filter = nodeset2filter(ost_index);
 
     return filter;
 }

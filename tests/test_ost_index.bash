@@ -13,11 +13,6 @@ if ! command -v rbh-sync &> /dev/null; then
     exit 1
 fi
 
-if ! lctl get_param mdt.*.hsm_control | grep "enabled"; then
-    echo "At least 1 MDT needs to have HSM control enabled" >&2
-    exit 1
-fi
-
 ################################################################################
 #                                  UTILITIES                                   #
 ################################################################################
@@ -69,6 +64,11 @@ difflines()
     diff -y - <([ $# -eq 0 ] && printf '' || printf '%s\n' "$@")
 }
 
+lfs_find_ost()
+{
+    lfs find . -ost $1 | sed 's/^.//' | sort | xargs
+}
+
 ################################################################################
 #                                    TESTS                                     #
 ################################################################################
@@ -82,13 +82,17 @@ test_invalid()
     if rbh_lfind "rbh:mongo:$testdb" -ost $(echo 2^64 | bc); then
         error "find with an ost index too big should have failed"
     fi
+
+    if rbh_lfind "rbh:mongo:$testdb" -ost []; then
+        error "find with an empty nodeset should have failed"
+    fi
 }
 
-test_none()
+test_single_match()
 {
-    local file=test_none
+    local file=test_single_match
 
-    lfs setstripe -i 1 -c 2 $file
+    lfs setstripe -i 1 -c 1 $file
 
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
 
@@ -96,20 +100,71 @@ test_none()
         difflines "/$file"
 }
 
+test_nodeset()
+{
+    local files=()
+
+    for i in {0..5}; do
+        lfs setstripe -i $i -c 1 test_nodeset$i
+    done
+
+    rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
+
+    for i in {0..5}; do
+        rbh_lfind "rbh:mongo:$testdb" -ost [$i] | sort |
+            difflines "/test_nodeset$i"
+
+        rbh_lfind "rbh:mongo:$testdb" -ost $i | sort |
+            difflines "/test_nodeset$i"
+    done
+
+    rbh_lfind "rbh:mongo:$testdb" -ost [4-6,1] | sort |
+        difflines $(lfs_find_ost 1,4,5,6)
+}
+
+test_pfl()
+{
+    lfs setstripe \
+        -E 64k  -c 1 \
+        -E 128k -c 4 \
+        -E -1   -c 6 \
+        test_pfl
+
+    dd if=/dev/urandom of=test_pfl bs=4096 count=256
+
+    rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
+
+    for i in {0..9}; do
+        rbh_lfind "rbh:mongo:$testdb" -ost [$i] | sort |
+            difflines $(lfs_find_ost $i)
+    done
+}
+
 ################################################################################
 #                                     MAIN                                     #
 ################################################################################
 
-declare -a tests=(test_invalid test_none)
+# declare -a tests=(test_invalid test_single_match test_nodeset test_pfl)
+declare -a tests=(test_pfl)
 
 tmpdir=$(mktemp --directory --tmpdir=$LUSTRE_DIR)
 cd "$tmpdir"
 
 for test in "${tests[@]}"; do
     (
-    # trap -- "teardown" EXIT
+    trap -- "teardown" EXIT
     setup
 
-    ("$test") && echo "$test: ✔" || error "$test: ✖"
+    "$test"
     )
+    rc=$?
+
+    if [[ $rc = 0 ]]; then
+        echo "$test: ✔"
+    else
+        error "$test: ✖"
+    fi
 done
+
+cd ..
+rm -rf "$tmpdir"

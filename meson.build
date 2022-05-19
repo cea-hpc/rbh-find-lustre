@@ -59,7 +59,7 @@ rbh_lfind = declare_dependency(
 executable(
 	'rbh-lfind',
 	sources: 'rbh-find-lustre.c',
-	dependencies: [rbh_lfind],
+	dependencies: [rbh_lfind, librobinhood, librbhfind, liblustre],
 	include_directories: include_dirs,
 	install: true,
 )

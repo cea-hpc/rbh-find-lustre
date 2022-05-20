@@ -34,6 +34,24 @@
       "parentUuid": "d092d533_0b03cb8a",
       "revId": "8594e22af98e35b82664ee3f541efa5b845474e9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3047bce6_6dab4108",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T14:04:35Z",
+      "side": 1,
+      "message": "sorry I didn\u0027t see the variable declaration in the while and thought it was a global somewhere (rbh-find has some of these); this looks OK.",
+      "parentUuid": "08eec2c9_8a90f3db",
+      "revId": "8594e22af98e35b82664ee3f541efa5b845474e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

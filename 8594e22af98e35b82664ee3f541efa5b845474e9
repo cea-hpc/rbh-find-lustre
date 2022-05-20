@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d092d533_0b03cb8a",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:12:13Z",
+      "side": 1,
+      "message": "find additional params are usually and (e.g. -type f -perm /100 will match executable files, not any executable inode or any file), unless explicitly requiring -or -- or did I get left_filter wrong?",
+      "revId": "8594e22af98e35b82664ee3f541efa5b845474e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -51,6 +51,24 @@
       "parentUuid": "a9ad80e5_be7fad76",
       "revId": "5a06070a2b76a705e58624e83af45b132fe95958",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a526e33_f9b89ce9",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T08:38:42Z",
+      "side": 1,
+      "message": "Thanks for checking!",
+      "parentUuid": "3b66b022_5342d318",
+      "revId": "5a06070a2b76a705e58624e83af45b132fe95958",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

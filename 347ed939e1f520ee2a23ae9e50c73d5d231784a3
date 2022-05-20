@@ -16,6 +16,23 @@
       "message": "This patch is the beginning of the new version with the changes requested. The old stack is abandoned and available here: https://review.gerrithub.io/c/cea-hpc/rbh-find-lustre/+/538442",
       "revId": "347ed939e1f520ee2a23ae9e50c73d5d231784a3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49297f94_b7b39d50",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T12:58:48Z",
+      "side": 1,
+      "message": "(nitpick) normally you\u0027d complain if *end !\u003d 0 -- what about trailing digits?\ne.g. is `-ost 42bob` ok?",
+      "revId": "347ed939e1f520ee2a23ae9e50c73d5d231784a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

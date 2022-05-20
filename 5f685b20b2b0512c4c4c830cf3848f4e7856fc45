@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "106fde22_1e9f6514",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T08:48:05Z",
+      "side": 1,
+      "message": "I didn\u0027t include these thinking that meson would handle the dependencies for me. Do you want me to change this in the first patch of the \"-ost stack\"?",
+      "range": {
+        "startLine": 62,
+        "startChar": 27,
+        "endLine": 62,
+        "endChar": 62
+      },
+      "revId": "5f685b20b2b0512c4c4c830cf3848f4e7856fc45",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

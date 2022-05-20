@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3ae1124d_a8442e68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T13:24:51Z",
+      "side": 1,
+      "message": "I think the idea was to copy-paste the code from another project, if I recall correctly what Thomas said but he is not available until June. I don\u0027t remember which one.\n\nI can solve the points you raised and add more tests to see how good (or bad) my implementation is.",
+      "parentUuid": "adeb78b5_f6827115",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8c09f1c_d536e968",
         "filename": "src/nodeset.c",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2022-05-20T13:09:22Z",
       "side": 1,
       "message": "if you\u0027re only parsing a single range as it appears this is a rangeset, not a nodeset, in clush notations (although rangesets don\u0027t include the actual brackets, the key difference is there\u0027s no \u0027node\u0027 name)",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4391c698_db0443cc",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T13:24:51Z",
+      "side": 1,
+      "message": "I can rename it.",
+      "parentUuid": "23277191_5d6b170b",
       "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },

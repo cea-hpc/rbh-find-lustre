@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3085f250_e960b306",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T11:27:54Z",
+      "side": 1,
+      "message": "Technically yes, I just kept it to be consistent",
+      "parentUuid": "6059616f_510711c6",
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afd6f02b_a424208d",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-05-19T22:12:33Z",
       "side": 1,
       "message": "${perms[@]} needs quoting (like you do below) to avoid splitting, even if there is none here I\u0027ve reported it because you do below.\n\nThere\u0027s a few more shellcheck warnings, although most can be ignored; use it (or better get vim/emacs/whatever to use it automatically for you)",
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e30f39e_76b80c69",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T11:27:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afd6f02b_a424208d",
       "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -95,6 +131,30 @@
       "writtenOn": "2022-05-20T11:20:26Z",
       "side": 1,
       "message": "Thanks for the pointer. I remember we had the same issue a while ago but I completely forgot about it... I\u0027m not a huge fan of -e either.",
+      "parentUuid": "57076134_574442a5",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 52
+      },
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4da825e2_abd87a23",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T11:27:54Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "57076134_574442a5",
       "range": {
         "startLine": 153,

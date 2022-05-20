@@ -33,6 +33,29 @@
       "message": "${perms[@]} needs quoting (like you do below) to avoid splitting, even if there is none here I\u0027ve reported it because you do below.\n\nThere\u0027s a few more shellcheck warnings, although most can be ignored; use it (or better get vim/emacs/whatever to use it automatically for you)",
       "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dc4ff4e_f5ce6f2a",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T07:28:19Z",
+      "side": 1,
+      "message": "major: I\u0027ve had issues with this line where the \"set -e\" option is ignored and my tests pass instead of failing... I don\u0027t know the reason but I changed it to the version in test_ost_index.bash which works better.",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 52
+      },
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

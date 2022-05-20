@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f12e2020_68d32e0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T12:55:22Z",
+      "side": 1,
+      "message": "This patch is the beginning of the new version with the changes requested. The old stack is abandoned and available here: https://review.gerrithub.io/c/cea-hpc/rbh-find-lustre/+/538442",
+      "revId": "347ed939e1f520ee2a23ae9e50c73d5d231784a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

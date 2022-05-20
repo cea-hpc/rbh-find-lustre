@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89369836_c34a7432",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:32:18Z",
+      "side": 1,
+      "message": "I\u0027d favor not reinventing the wheel 😊\n\nI found the code I was thinking of in ganesha, it got removed later on because nodeset stopped being used:\n\nhttps://github.com/nfs-ganesha/nfs-ganesha/tree/V2.4.0/src/NodeList\n\nI\u0027m not sure if Thomas was thinking of that, but it has rangelist which is probably what you want (nodelist_range.c)\n\nI think there was some other c code somewhere that might have been simpler by Matthieu (Hautreux) . . .a loong time ago. . . if you could ask him while Thomas is out... Tell him I say hi :-D",
+      "parentUuid": "3ae1124d_a8442e68",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8c09f1c_d536e968",
         "filename": "src/nodeset.c",
         "patchSetId": 1

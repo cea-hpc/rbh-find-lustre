@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fa83487_d680701a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T08:55:59Z",
+      "side": 1,
+      "message": "-1 to remember checking if include robinhood.h is needed or ont, and if liblustre/rbhfind are needed as deps",
+      "revId": "5f685b20b2b0512c4c4c830cf3848f4e7856fc45",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "106fde22_1e9f6514",
@@ -38,6 +55,30 @@
       "side": 1,
       "message": "The second one*",
       "parentUuid": "106fde22_1e9f6514",
+      "range": {
+        "startLine": 62,
+        "startChar": 27,
+        "endLine": 62,
+        "endChar": 62
+      },
+      "revId": "5f685b20b2b0512c4c4c830cf3848f4e7856fc45",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aadb9c1f_13c24b56",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T08:55:59Z",
+      "side": 1,
+      "message": "the *library* part is transitive: if you don\u0027t explicitly do librobinhood or liblustre calls in rbh-find-lustre.c, but rbh_lfind uses these and pulls liblustre then you\u0027ll get liblustre from it.\nIf however you use thse directly in the .c here, you don\u0027t get the headers or direct-level linking unless you explicitly request it. perhaps including robinhood.h isn\u0027t needed at all? I didn\u0027t check, nor did I check if librbhfind/liblustre are actually needed here... so in that sense this patch is probably no good, I was in a hurry\n\n(with that said, I don\u0027t really care - feel free to edit your earlier patch and we\u0027ll abandon this, or we can just get this in (eventually fixed) later if that\u0027s simpler)",
+      "parentUuid": "ad70c872_f2640c44",
       "range": {
         "startLine": 62,
         "startChar": 27,

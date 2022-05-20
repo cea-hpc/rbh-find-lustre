@@ -20,6 +20,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21cca20e_dc744607",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-20T07:05:39Z",
+      "side": 1,
+      "message": "nit: I think checking value is not mandatory",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 41
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "826f1a73_a81434a9",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-20T07:05:39Z",
+      "side": 1,
+      "message": "question: is this one not checked in `str2uint64_t()`?",
+      "range": {
+        "startLine": 141,
+        "startChar": 9,
+        "endLine": 141,
+        "endChar": 28
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b7bb986_bb3fc1b2",
         "filename": "tests/test_ost_index.bash",
         "patchSetId": 1

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4fcc48f_2b51f745",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T12:46:59Z",
+      "side": 1,
+      "message": "(nitpick) `in \"$@\"` is optional: `for test; do` does exactly the same thing.\n\nIf it\u0027s not obvious to you it\u0027s better to keep the in \"$@\" though.",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dea787a8_d4a61b39",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T12:46:59Z",
+      "side": 1,
+      "message": "ah, err, gave that +1 too fast: This will stop on first test if the main script is running with -e.\n\n  set -e\n  ( exit 1; )\n  echo continued\n  \nwon\u0027t ever get to continued, and this is what it boils to; so the subshell is either useless or not enough to keep going (not sure what you\u0027re going after -- we need to keep track that an error happened to exit non-zero on error, otherwise meson test will think things all worked out)\n\nSo you want either:\n\n  local fail\u003d0\n  for test; do\n    if (trap -- teardown EXIT\n        setup\n        \"$test\"); then\n            echo \"$test: ok\"\n    else\n            echo \"$test: bad\"\n            fail\u003d1\n    fi\n  done\n  return $fail\n\nor\n\n  for test; do\n    if (trap -- teardown EXIT\n        setup\n        \"$test\"); then\n            echo \"$test: ok\"\n    else\n            error \"$test: bad\"\n    fi\n  done",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

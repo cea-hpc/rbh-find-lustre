@@ -80,6 +80,30 @@
       },
       "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c7c5a0b_e8e9c00c",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T11:20:26Z",
+      "side": 1,
+      "message": "Thanks for the pointer. I remember we had the same issue a while ago but I completely forgot about it... I\u0027m not a huge fan of -e either.",
+      "parentUuid": "57076134_574442a5",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 52
+      },
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

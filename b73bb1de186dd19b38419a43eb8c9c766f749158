@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "67e2cce6_6faf5a49",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "I didn\u0027t want to modify the value until I sure the input is valid",
+      "parentUuid": "227393fd_9d8fdfe5",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 19
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21cca20e_dc744607",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2022-05-20T07:05:39Z",
       "side": 1,
       "message": "nit: I think checking value is not mandatory",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 41
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c7e57b5_add34eb0",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "From the man page:\n\nIf there were no digits at all, strtoul() stores the original value of nptr in *endptr (and returns 0)",
+      "parentUuid": "21cca20e_dc744607",
       "range": {
         "startLine": 35,
         "startChar": 17,
@@ -136,6 +184,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0f44c0e4_6e710bdd",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "The issue is that this test is mainly intended to prevent negative numbers that cannot be filtered by strtoull. This error message would be confusing with a command such as: rbh-lfind ... -ost -1",
+      "parentUuid": "e4ffbaff_14dbb909",
+      "range": {
+        "startLine": 142,
+        "startChar": 28,
+        "endLine": 142,
+        "endChar": 46
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e0058ce_3d62c0f8",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -159,6 +231,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eec55c69_7043c9a8",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "No, it doesn\u0027t.",
+      "parentUuid": "8e0058ce_3d62c0f8",
+      "range": {
+        "startLine": 148,
+        "startChar": 32,
+        "endLine": 148,
+        "endChar": 38
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b7bb986_bb3fc1b2",
         "filename": "tests/test_ost_index.bash",
         "patchSetId": 1
@@ -170,6 +266,24 @@
       "writtenOn": "2022-05-19T15:02:06Z",
       "side": 1,
       "message": "major: I should use test_utils here also.",
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a662b177_ee3cb2b7",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b7bb986_bb3fc1b2",
       "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -221,6 +335,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "654b1e03_547046b6",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fe6383d_6d2865c3",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 2
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e11ec5f8_7540294c",
@@ -244,6 +382,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8baba4ec_12131661",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e11ec5f8_7540294c",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 12
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cedd8a14_9024c553",
@@ -257,6 +419,30 @@
       "writtenOn": "2022-05-20T08:11:57Z",
       "side": 1,
       "message": "minor: just like my other 2 patches, there is a missing trap to rm this directory",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 6
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66e62004_d69dd673",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T09:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cedd8a14_9024c553",
       "range": {
         "startLine": 105,
         "startChar": 0,

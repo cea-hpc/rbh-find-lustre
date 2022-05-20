@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adeb78b5_f6827115",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "I wonder if there isn\u0027t another rangeset c library you could just use, did you try asking Thomas? There used to be one in ganesha but I can\u0027t find it quickly...",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8c09f1c_d536e968",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "(defect of last item not being freed pointed by Yoann still present in this version)",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23277191_5d6b170b",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "if you\u0027re only parsing a single range as it appears this is a rangeset, not a nodeset, in clush notations (although rangesets don\u0027t include the actual brackets, the key difference is there\u0027s no \u0027node\u0027 name)",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60214c17_504009a6",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "This allows [3-,4]",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a75bc0c_7b3b83ca",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "this allows [1-2-3]",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c3e3645_83f02688",
+        "filename": "src/nodeset.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T13:09:22Z",
+      "side": 1,
+      "message": "this allows [3-] or [] or [3,]",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

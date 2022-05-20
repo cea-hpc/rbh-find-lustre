@@ -22,6 +22,30 @@
       },
       "revId": "5f685b20b2b0512c4c4c830cf3848f4e7856fc45",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad70c872_f2640c44",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T08:48:43Z",
+      "side": 1,
+      "message": "The second one*",
+      "parentUuid": "106fde22_1e9f6514",
+      "range": {
+        "startLine": 62,
+        "startChar": 27,
+        "endLine": 62,
+        "endChar": 62
+      },
+      "revId": "5f685b20b2b0512c4c4c830cf3848f4e7856fc45",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

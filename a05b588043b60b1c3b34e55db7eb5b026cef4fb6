@@ -56,6 +56,30 @@
       },
       "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57076134_574442a5",
+        "filename": "tests/test_compat.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T08:27:54Z",
+      "side": 1,
+      "message": "man bash:\n\n -e      Exit immediately if a pipeline (which may consist of a single simple command),\n         a list, or a compound command (see SHELL GRAMMAR above), exits with a non-zero\n         status.  The shell does not exit if the command that fails is part of the com‐\n         mand  list  immediately  following  a while or until keyword, part of the test\n         following the if or elif reserved words, part of any command executed in a  \u0026\u0026\n         or  ||  list except the command following the final \u0026\u0026 or ||, any command in a \n         pipeline but the last, or if the command\u0027s return value is being inverted with\n         !.   If a compound command other than a subshell returns a non-zero status be‐\n         cause a command failed while -e was being ignored, the shell does not exit.  A \n         trap  on ERR, if set, is executed before the shell exits.  This option applies\n         to the shell environment and each subshell environment separately (see COMMAND \n         EXECUTION ENVIRONMENT above), and may cause subshells to exit before executing\n         all the commands in the subshell.\n         If a compound command or shell function executes in a context where -e is  be‐\n         ing  ignored,  none  of  the  commands executed within the compound command or\n         function body will be affected by the -e setting, even if -e is set and a com‐\n         mand  returns  a failure status.  If a compound command or shell function sets\n         -e while executing in a context where -e is ignored,  that  setting  will  not\n         have any effect until the compound command or the command containing the func‐\n         tion call completes.\n\ntl;dr if a command is part of a pipeline, -e is only applied to the last command. This apparently includes subshells.\n\n\nRather than unweildy $? manipulations you can just use if:\n\n if (trap ...\n     setup\n     test); then\n      success\n  else\n      fail\n  fi\n  \n(or -e can be explicitly set again within the subshell, which also works; I\u0027d argue we don\u0027t want it outside of test shell but I just don\u0027t like -e...)",
+      "parentUuid": "6dc4ff4e_f5ce6f2a",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 52
+      },
+      "revId": "a05b588043b60b1c3b34e55db7eb5b026cef4fb6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "find additional params are usually and (e.g. -type f -perm /100 will match executable files, not any executable inode or any file), unless explicitly requiring -or -- or did I get left_filter wrong?",
       "revId": "8594e22af98e35b82664ee3f541efa5b845474e9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08eec2c9_8a90f3db",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T13:50:05Z",
+      "side": 1,
+      "message": "The idea here was to allow the user to query a list of OSTs in one predicate.\n\nFor example, \"-ost [1-7,10-20]\" would match any file which has at least one stripe in OSTs 1 through 7 or 10 through 20. Then if the user wants to specify intersections of range sets, \"-ost ... -ost ...\" will do the trick.\n\nUnless there is a bug in my implementation, that\u0027s what this filter_or and left_filter are supposed to do.",
+      "parentUuid": "d092d533_0b03cb8a",
+      "revId": "8594e22af98e35b82664ee3f541efa5b845474e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

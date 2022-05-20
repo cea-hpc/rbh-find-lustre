@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "227393fd_9d8fdfe5",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "nit: you could just use \"*result\" instead of value",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 19
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21cca20e_dc744607",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -66,6 +89,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e4ffbaff_14dbb909",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "minor: \"given ost is not a number:\"",
+      "range": {
+        "startLine": 142,
+        "startChar": 28,
+        "endLine": 142,
+        "endChar": 46
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e0058ce_3d62c0f8",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "question: does the \"in\" filter not work here ?",
+      "range": {
+        "startLine": 148,
+        "startChar": 32,
+        "endLine": 148,
+        "endChar": 38
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b7bb986_bb3fc1b2",
         "filename": "tests/test_ost_index.bash",
         "patchSetId": 1
@@ -77,6 +146,75 @@
       "writtenOn": "2022-05-19T15:02:06Z",
       "side": 1,
       "message": "major: I should use test_utils here also.",
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d5aa2f1_81feb5ce",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "minor: this if is useless for this test",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 2
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e11ec5f8_7540294c",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "minor: you could also test with a \"-ost dummy\", just a test with a non-digit input",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 12
+      },
+      "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cedd8a14_9024c553",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T08:11:57Z",
+      "side": 1,
+      "message": "minor: just like my other 2 patches, there is a missing trap to rm this directory",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 6
+      },
       "revId": "b73bb1de186dd19b38419a43eb8c9c766f749158",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

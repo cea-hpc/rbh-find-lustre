@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95eb60b5_e7836fbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T13:44:27Z",
+      "side": 1,
+      "message": "I\u0027ll see what I can do. The original intent was to implement -ost \u003cn\u003e first and support rangeset later. I tried to implement it since the simple integer version was easier than we originally intended. The last 2 patches can wait a bit longer.\n\nThank you for the pointers (and the review :))",
+      "parentUuid": "89369836_c34a7432",
+      "revId": "e45e01720ad30986214b92dfb86c1077fa37fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8c09f1c_d536e968",
         "filename": "src/nodeset.c",
         "patchSetId": 1

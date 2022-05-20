@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fd56c3b_561613a2",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T12:58:37Z",
+      "side": 1,
+      "message": "does this rm actually work? You entered testdir earlier, and testdir was a relative path, so you\u0027ll likely not be deleting anything here.\n\nrm is cowardly refusing to remove \u0027.\u0027, so you\u0027ll need to remember testdir by its realpath(1) or go back a level.",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f4fcc48f_2b51f745",
         "filename": "tests/test_utils.bash",
         "patchSetId": 4

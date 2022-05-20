@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a5bc53e_04e59ba7",
+        "filename": "rbh-find-lustre.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T11:28:05Z",
+      "side": 1,
+      "message": "If we want to keep close to find\u0027s behaviour, regarding the options with a set of list of values, they are case sensitive (from the helper, there is only -size, -type and -xtype). So if we want to be consistent, we should stay case sensitive.",
+      "parentUuid": "e5e7c887_b74acfaf",
+      "revId": "5a06070a2b76a705e58624e83af45b132fe95958",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a9ad80e5_be7fad76",
         "filename": "tests/test_hsm_state.bash",
         "patchSetId": 5

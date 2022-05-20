@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a16b6618_11c15640",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-20T12:35:20Z",
+      "side": 1,
+      "message": "should be +1 here? (or better sizeof(buf))\nsnprintf length includes the null byte in its size calculation",
+      "range": {
+        "startLine": 115,
+        "startChar": 23,
+        "endLine": 115,
+        "endChar": 38
+      },
+      "revId": "c5a8dd3f078888c260aa69d613f8f619622fa03d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

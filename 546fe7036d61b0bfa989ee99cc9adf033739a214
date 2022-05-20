@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da1779f7_0b6c3520",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T12:52:22Z",
+      "side": 1,
+      "message": "Since I forgot to put the change ID in the previous versions, these 3 patch will be abandonned. The new version begins here: https://review.gerrithub.io/c/cea-hpc/rbh-find-lustre/+/538488",
+      "revId": "546fe7036d61b0bfa989ee99cc9adf033739a214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

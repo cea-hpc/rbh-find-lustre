@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95c2d83f_3353ab27",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-23T08:10:41Z",
+      "side": 1,
+      "message": "Added the \"$PWD\" when creating the variable.",
+      "parentUuid": "7fd56c3b_561613a2",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4fcc48f_2b51f745",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d61c493_20a912ba",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-23T08:10:41Z",
+      "side": 1,
+      "message": "It is indeed not obvious for me, I\u0027ll keep it.",
+      "parentUuid": "f4fcc48f_2b51f745",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dea787a8_d4a61b39",
@@ -48,6 +84,24 @@
       "writtenOn": "2022-05-20T12:46:59Z",
       "side": 1,
       "message": "ah, err, gave that +1 too fast: This will stop on first test if the main script is running with -e.\n\n  set -e\n  ( exit 1; )\n  echo continued\n  \nwon\u0027t ever get to continued, and this is what it boils to; so the subshell is either useless or not enough to keep going (not sure what you\u0027re going after -- we need to keep track that an error happened to exit non-zero on error, otherwise meson test will think things all worked out)\n\nSo you want either:\n\n  local fail\u003d0\n  for test; do\n    if (trap -- teardown EXIT\n        setup\n        \"$test\"); then\n            echo \"$test: ok\"\n    else\n            echo \"$test: bad\"\n            fail\u003d1\n    fi\n  done\n  return $fail\n\nor\n\n  for test; do\n    if (trap -- teardown EXIT\n        setup\n        \"$test\"); then\n            echo \"$test: ok\"\n    else\n            error \"$test: bad\"\n    fi\n  done",
+      "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34576f9e_e7a7c866",
+        "filename": "tests/test_utils.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-23T08:10:41Z",
+      "side": 1,
+      "message": "Went with the first version, We want to execute every test but keep the first error",
+      "parentUuid": "dea787a8_d4a61b39",
       "revId": "bc7e659b6b7332065e673e6b82a0186b3d94721b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

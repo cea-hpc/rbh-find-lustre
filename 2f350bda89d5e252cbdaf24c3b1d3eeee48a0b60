@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d821889d_8b9017bb",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-31T10:11:58Z",
+      "side": 1,
+      "message": "suggest: move this function above the TESTS banner",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "2f350bda89d5e252cbdaf24c3b1d3eeee48a0b60",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77014322_01db5251",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-31T10:11:58Z",
+      "side": 1,
+      "message": "minor: this is the same test as \"test_one_match\", so I don\u0027t think it\u0027s necessary here",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 8
+      },
+      "revId": "2f350bda89d5e252cbdaf24c3b1d3eeee48a0b60",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25ce9793_6d9e2851",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-31T10:11:58Z",
+      "side": 1,
+      "message": "nit: use the full option names here",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 18
+      },
+      "revId": "2f350bda89d5e252cbdaf24c3b1d3eeee48a0b60",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

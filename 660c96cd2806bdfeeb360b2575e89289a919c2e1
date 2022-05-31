@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef22066f_fe520e30",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-31T09:58:35Z",
+      "side": 1,
+      "message": "nit: could you use the full option name ? \"--stripe-index 0 --stripe-count 1\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 18,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "660c96cd2806bdfeeb360b2575e89289a919c2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

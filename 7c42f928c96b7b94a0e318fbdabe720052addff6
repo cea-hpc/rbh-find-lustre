@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd77722b_a4fc96ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-31T10:05:27Z",
+      "side": 1,
+      "message": "As pointed by Dominique, the nodeset destruction still doesn\u0027t free the last element",
+      "revId": "7c42f928c96b7b94a0e318fbdabe720052addff6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

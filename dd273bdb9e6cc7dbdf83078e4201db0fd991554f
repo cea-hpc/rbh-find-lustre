@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "49f1db5f_9d07d6ab",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-06-02T12:20:43Z",
+      "side": 1,
+      "message": "I think I missed that during the review. I agree with Dominique. What is the purpose of this? lfs path2fid will return brackets and many tools will log FIDs using DFID which outputs the brackets. Which makes the copy/paste unnecessarily annoying.",
+      "range": {
+        "startLine": 82,
+        "startChar": 22,
+        "endLine": 82,
+        "endChar": 27
+      },
+      "revId": "dd273bdb9e6cc7dbdf83078e4201db0fd991554f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "544930e6_1acfcc62",
         "filename": "README.rst",
         "patchSetId": 1

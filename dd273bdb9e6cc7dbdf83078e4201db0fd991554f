@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "544930e6_1acfcc62",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-06-02T11:11:22Z",
+      "side": 1,
+      "message": "(thought) now I\u0027m seeing it this way that feels weird to me, we probably should allow either (and just strip backets off if present)",
+      "range": {
+        "startLine": 87,
+        "startChar": 33,
+        "endLine": 87,
+        "endChar": 44
+      },
+      "revId": "dd273bdb9e6cc7dbdf83078e4201db0fd991554f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

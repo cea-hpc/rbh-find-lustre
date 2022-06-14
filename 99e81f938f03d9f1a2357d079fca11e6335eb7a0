@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afa38fe3_f214c679",
+        "filename": "tests/test_fid.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-06-14T11:21:17Z",
+      "side": 1,
+      "message": "nit: I\u0027m not used to this syntax. Maybe a small comment like would be useful:\nremove braces around fid\n\nI assume this will be removed at some point when the restriction for braces is lifted.",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 21
+      },
+      "revId": "99e81f938f03d9f1a2357d079fca11e6335eb7a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

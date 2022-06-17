@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c756479_179ad1b9",
+        "filename": "src/parser.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-06-17T09:20:16Z",
+      "side": 1,
+      "message": "minor: missing ost string here",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 41
+      },
+      "revId": "87e00d2ecc9c12b1f27766e4f1aa9413be6f68f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

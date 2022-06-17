@@ -46,6 +46,30 @@
       },
       "revId": "660c96cd2806bdfeeb360b2575e89289a919c2e1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e53ac31f_18ba9560",
+        "filename": "tests/test_ost_index.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-06-17T09:25:41Z",
+      "side": 1,
+      "message": "I like it less verbose. If they are unclear to the reader, a quick look at the man page will clarify this line.",
+      "parentUuid": "0b9efb9a_03685ea0",
+      "range": {
+        "startLine": 49,
+        "startChar": 18,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "660c96cd2806bdfeeb360b2575e89289a919c2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0301573f_01f9110f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-06-24T09:46:07Z",
+      "side": 1,
+      "message": "Bah, llapi_fid_parse() only got in in 2.14, I guess we can\u0027t use that...\n\nI personally don\u0027t like variable format strings and slightly prefer what other llapi codes do (just skipping leading [ with simple checks), but there\u0027s plenty of tests and I can\u0027t fault the logic so LGTM. Thanks for implementing this!",
+      "revId": "661058e4f75270aca8d5c3cad50724dd3e87aecc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

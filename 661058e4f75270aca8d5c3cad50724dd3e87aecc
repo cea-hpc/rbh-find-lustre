@@ -34,6 +34,24 @@
       "parentUuid": "0301573f_01f9110f",
       "revId": "661058e4f75270aca8d5c3cad50724dd3e87aecc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c52c1bba_ee2fde2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-06-24T10:35:42Z",
+      "side": 1,
+      "message": "lustre is quite happy with these:\n\n # lfs fid2path testfs0 \u0027[[[[0x200000bd1:0x25:0x0\u0027\n bar\n\nBut I guess sometimes it\u0027s better to be strict and catch bad users early :)",
+      "parentUuid": "1c653c65_853c8cf7",
+      "revId": "661058e4f75270aca8d5c3cad50724dd3e87aecc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

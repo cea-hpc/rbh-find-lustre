@@ -98,6 +98,22 @@ exact OST index.
     ./dir/file-on-ost-2
     ./dir/file-on-ost-1-and-2
 
+-expired-at
+----
+
+rbh-lfind defines a ``-expired-at`` action that filters the entries on an
+given time in the past.
+
+.. code:: bash
+
+    rbh-find rbh:mongo:test -expired-at 10
+    ./dir/file-that-expired-10-seconds-ago
+
+    rbh-find rbh:mongo:test -expired-at 10 -o -expired-at +300
+    ./dir/file-that-expired-10-seconds-ago
+    ./dir/file-that-expired-5-minutes-ago
+    ./dir/file-that-expired-2-hours-ago
+
 Examples
 --------
 

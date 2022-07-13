@@ -15,30 +15,20 @@
 
 #include <robinhood/backend.h>
 #include <rbh-find/filters.h>
+#include <rbh-find/utils.h>
 
 #include "filters.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
-    [LPRED_FID - LPRED_MIN] =       {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "fid"},
-    [LPRED_HSM_STATE - LPRED_MIN] = {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "hsm_state"},
-    [LPRED_OST_INDEX - LPRED_MIN] = {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "ost"},
+    [LPRED_EXPIRED_AT - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                      .xattr = "user.ccc_expires_at"},
+    [LPRED_FID - LPRED_MIN] =        {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "fid"},
+    [LPRED_HSM_STATE - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "hsm_state"},
+    [LPRED_OST_INDEX - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "ost"},
 };
-
-static int
-str2uint64_t(const char *input, uint64_t *result)
-{
-    char *end;
-
-    errno = 0;
-    *result = strtoull(input, &end, 0);
-    if (errno || (!*result && input == end) || *end != '\0')
-        return -1;
-
-    return 0;
-}
 
 static enum hsm_states
 str2hsm_states(const char *hsm_state)
@@ -176,4 +166,13 @@ ost_index2filter(const char *ost_index)
                       "ost_index2filter");
 
     return filter;
+}
+
+struct rbh_filter *
+expired_at2filter(const char *expired_at)
+{
+    const struct rbh_filter_field *field =
+        &predicate2filter_field[LPRED_EXPIRED_AT - LPRED_MIN];
+
+    return timedelta2filter(field, TU_MINUTE, true, expired_at);
 }

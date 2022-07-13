@@ -19,12 +19,14 @@
 #include "filters.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
-    [LPRED_FID - LPRED_MIN] =       {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "fid"},
-    [LPRED_HSM_STATE - LPRED_MIN] = {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "hsm_state"},
-    [LPRED_OST_INDEX - LPRED_MIN] = {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                     .xattr = "ost"},
+    [LPRED_EXPIRED_AT - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                      .xattr = "user.ccc_expires_at"},
+    [LPRED_FID - LPRED_MIN] =        {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "fid"},
+    [LPRED_HSM_STATE - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "hsm_state"},
+    [LPRED_OST_INDEX - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                      .xattr = "ost"},
 };
 
 static int
@@ -174,6 +176,32 @@ ost_index2filter(const char *ost_index)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "ost_index2filter");
+
+    return filter;
+}
+
+struct rbh_filter *
+expired_at2filter(const char *expired_at)
+{
+    struct rbh_filter *filter;
+    uint64_t expiration_date;
+    int rc;
+
+    if (!isdigit(*expired_at))
+        error(EX_USAGE, 0, "invalid expired-at epoch: `%s'", expired_at);
+
+    rc = str2uint64_t(expired_at, &expiration_date);
+    if (rc)
+        error(EX_USAGE, errno, "invalid expired-at epoch: `%s'", expired_at);
+
+    filter = rbh_filter_compare_uint64_new(
+            RBH_FOP_LOWER_OR_EQUAL,
+            &predicate2filter_field[LPRED_EXPIRED_AT - LPRED_MIN],
+            expiration_date
+            );
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "expired_at2filter");
 
     return filter;
 }

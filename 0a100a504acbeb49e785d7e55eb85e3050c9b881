@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3676b6ce_0974ee4e",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-07-13T15:09:28Z",
+      "side": 1,
+      "message": "question: is it the right xattr name? After checking the patch in librobinhood, I understood we replace the binary attribute by an integer one. Is it okay to do so?",
+      "range": {
+        "startLine": 23,
+        "startChar": 48,
+        "endLine": 23,
+        "endChar": 67
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

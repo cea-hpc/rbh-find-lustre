@@ -22,6 +22,30 @@
       },
       "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03977c7c_097235c5",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-18T08:43:48Z",
+      "side": 1,
+      "message": "Yes it is, we replace the binary xattrs in librobinhood with an int xattrs, but we don\u0027t change the name. Basically, we just record \"user.ccc_expires_at\" as an integer instead of a binary forever in the Lustre backend",
+      "parentUuid": "3676b6ce_0974ee4e",
+      "range": {
+        "startLine": 23,
+        "startChar": 48,
+        "endLine": 23,
+        "endChar": 67
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

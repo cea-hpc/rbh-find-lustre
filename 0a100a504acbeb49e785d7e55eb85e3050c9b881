@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "108aa077_8339e90c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2022-07-19T15:08:28Z",
+      "side": 1,
+      "message": "The patch is fine, but the syntax should be homogeneous between options.",
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3676b6ce_0974ee4e",
@@ -84,6 +101,52 @@
         "startChar": 48,
         "endLine": 23,
         "endChar": 67
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "018fe49a_403ae996",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2022-07-19T15:08:28Z",
+      "side": 1,
+      "message": "This behavior is different from other options: the switch between exact value/greater/lesser is indicated by the prefix (none)/+/-\nIMO we should have the same syntax and interpretation for all options, not a specific behavior for each option.",
+      "range": {
+        "startLine": 198,
+        "startChar": 11,
+        "endLine": 198,
+        "endChar": 35
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5d8dfb1_cd4be106",
+        "filename": "tests/test_expired_at.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2022-07-19T15:08:28Z",
+      "side": 1,
+      "message": "This should be allowed, meaning \"less than 1\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 46,
+        "endLine": 28,
+        "endChar": 48
       },
       "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"

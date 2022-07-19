@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "935fd9f0_778ba11a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-19T14:54:18Z",
+      "side": 1,
+      "message": "I switched back to 0 because the option is not documented.",
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3676b6ce_0974ee4e",

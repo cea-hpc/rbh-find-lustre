@@ -35,6 +35,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee8a70f2_9e13f073",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-22T10:12:32Z",
+      "side": 1,
+      "message": "Done for what is currently possible.",
+      "parentUuid": "935fd9f0_778ba11a",
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c764f939_0b88d221",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-22T10:12:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "108aa077_8339e90c",
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3676b6ce_0974ee4e",
@@ -129,6 +165,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "997ca172_06a482dc",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-22T10:12:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "018fe49a_403ae996",
+      "range": {
+        "startLine": 198,
+        "startChar": 11,
+        "endLine": 198,
+        "endChar": 35
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5d8dfb1_cd4be106",
@@ -142,6 +202,30 @@
       "writtenOn": "2022-07-19T15:08:28Z",
       "side": 1,
       "message": "This should be allowed, meaning \"less than 1\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 46,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "0a100a504acbeb49e785d7e55eb85e3050c9b881",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0a0d476_55ea3470",
+        "filename": "tests/test_expired_at.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-22T10:12:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5d8dfb1_cd4be106",
       "range": {
         "startLine": 28,
         "startChar": 46,

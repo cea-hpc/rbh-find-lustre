@@ -25,6 +25,8 @@ str2lustre_predicate(const char *string)
     case 'e':
         if (strcmp(&string[2], "xpired-at") == 0)
             return LPRED_EXPIRED_AT;
+        else if (strcmp(&string[2], "xpired-in") == 0)
+            return LPRED_EXPIRED_IN;
         break;
     case 'f':
         if (strcmp(&string[2], "id") == 0)
@@ -45,6 +47,7 @@ str2lustre_predicate(const char *string)
 
 static const char *__lustre_predicate2str[] = {
     [LPRED_EXPIRED_AT - LPRED_MIN] = "expired-at",
+    [LPRED_EXPIRED_IN - LPRED_MIN] = "expired-in",
     [LPRED_FID - LPRED_MIN]        = "fid",
     [LPRED_HSM_STATE - LPRED_MIN]  = "hsm-state",
     [LPRED_OST_INDEX - LPRED_MIN]  = "ost",

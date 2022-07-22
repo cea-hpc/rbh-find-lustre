@@ -56,4 +56,14 @@ ost_index2filter(const char *ost_index);
 struct rbh_filter *
 expired_at2filter(const char *expired_at);
 
+/**
+ * Build a filter for the -expired-in predicate
+ *
+ * @param ost_index    a string representing an epoch
+ *
+ * @return             a pointer to a newly allocated struct rbh_filter
+ */
+struct rbh_filter *
+expired_in2filter(const char *expired_in);
+
 #endif

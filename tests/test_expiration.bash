@@ -23,28 +23,34 @@ cd "$LUSTRE_DIR"
 #                                    TESTS                                     #
 ################################################################################
 
-test_invalid()
+test_invalid_generic()
 {
-    rbh_lfind "rbh:mongo:$testdb" -expired-at $(echo 2^64 | bc) &&
+    rbh_lfind "rbh:mongo:$testdb" "$1" $(echo 2^64 | bc) &&
         error "find with an expired-at epoch too big should have failed"
 
-    rbh_lfind "rbh:mongo:$testdb" -expired-at 42blob &&
+    rbh_lfind "rbh:mongo:$testdb" "$1" 42blob &&
         error "find with an invalid expired-at epoch should have failed"
 
-    rbh_lfind "rbh:mongo:$testdb" -expired-at invalid &&
+    rbh_lfind "rbh:mongo:$testdb" "$1" invalid &&
         error "find with an invalid expired-at epoch should have failed"
 
     return 0
 }
 
-test_expired_files()
+test_invalid()
 {
-    local fileA="expired_file_A"
-    local timeA="$(($(date +%s) - 30))"
-    local fileB="expired_file_B"
-    local timeB="$(($(date +%s) - 60))"
-    local fileC="expired_file_C"
-    local timeC="$(($(date +%s) - 65))"
+    test_invalid_generic "-expired-at"
+    test_invalid_generic "-expired-in"
+}
+
+test_expired_setup()
+{
+    fileA="expired_file_A"
+    timeA="$(($(date +%s) $1 30))"
+    fileB="expired_file_B"
+    timeB="$(($(date +%s) $1 60))"
+    fileC="expired_file_C"
+    timeC="$(($(date +%s) $1 80))"
 
     touch "$fileA"
     setfattr -n user.ccc_expires_at -v "$timeA" "$fileA"
@@ -58,6 +64,11 @@ test_expired_files()
     sleep 1
 
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
+}
+
+test_expired_at_files()
+{
+    test_expired_setup "-"
 
     rbh_lfind "rbh:mongo:$testdb" -expired-at 0 | sort |
         difflines "/$fileA"
@@ -73,11 +84,29 @@ test_expired_files()
         difflines
 }
 
+test_expired_in_files()
+{
+    test_expired_setup "+"
+
+    rbh_lfind "rbh:mongo:$testdb" -expired-in 0 | sort |
+        difflines "/$fileA" "/$fileB"
+    rbh_lfind "rbh:mongo:$testdb" -expired-in 1 | sort |
+        difflines "/$fileC"
+    rbh_lfind "rbh:mongo:$testdb" -expired-in -1 | sort |
+        difflines "/$fileA" "/$fileB"
+    rbh_lfind "rbh:mongo:$testdb" -expired-in -2 | sort |
+        difflines "/$fileA" "/$fileB" "/$fileC"
+    rbh_lfind "rbh:mongo:$testdb" -expired-in +1 | sort |
+        difflines "/$fileC"
+    rbh_lfind "rbh:mongo:$testdb" -expired-in +2 | sort |
+        difflines
+}
+
 ################################################################################
 #                                     MAIN                                     #
 ################################################################################
 
-declare -a tests=(test_invalid test_expired_files)
+declare -a tests=(test_invalid test_expired_at_files test_expired_in_files)
 
 tmpdir=$(mktemp --directory --tmpdir=$LUSTRE_DIR)
 trap "rm -r $tmpdir" EXIT

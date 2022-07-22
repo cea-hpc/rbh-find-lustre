@@ -114,6 +114,22 @@ given time in the past.
     ./dir/file-that-expired-5-minutes-ago
     ./dir/file-that-expired-2-hours-ago
 
+-expired-in
+----
+
+rbh-lfind defines a ``-expired-in`` action that behaves like ``-expired-at``
+but filters on future times.
+
+.. code:: bash
+
+    rbh-find rbh:mongo:test -expired-in 10
+    ./dir/file-that-expires-in-10-seconds
+
+    rbh-find rbh:mongo:test -expired-in 10 -o -expired-in +300
+    ./dir/file-that-expires-in-10-seconds
+    ./dir/file-that-expires-in-5-minutes
+    ./dir/file-that-expires-in-2-hours
+
 Examples
 --------
 

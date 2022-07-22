@@ -22,6 +22,8 @@
 static const struct rbh_filter_field predicate2filter_field[] = {
     [LPRED_EXPIRED_AT - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
                                       .xattr = "user.ccc_expires_at"},
+    [LPRED_EXPIRED_IN - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                      .xattr = "user.ccc_expires_at"},
     [LPRED_FID - LPRED_MIN] =        {.fsentry = RBH_FP_NAMESPACE_XATTRS,
                                       .xattr = "fid"},
     [LPRED_HSM_STATE - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
@@ -175,4 +177,13 @@ expired_at2filter(const char *expired_at)
         &predicate2filter_field[LPRED_EXPIRED_AT - LPRED_MIN];
 
     return timedelta2filter(field, TU_MINUTE, true, expired_at);
+}
+
+struct rbh_filter *
+expired_in2filter(const char *expired_in)
+{
+    const struct rbh_filter_field *field =
+        &predicate2filter_field[LPRED_EXPIRED_IN - LPRED_MIN];
+
+    return timedelta2filter(field, TU_MINUTE, false, expired_in);
 }

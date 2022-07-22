@@ -46,6 +46,8 @@ lustre_predicate_or_action(const char *string)
         case 'e':
             if (!strcmp(&string[2], "xpired-at"))
                 return CLT_PREDICATE;
+            else if (!strcmp(&string[2], "xpired-in"))
+                return CLT_PREDICATE;
             break;
         case 'f':
             if (!strcmp(&string[2], "id"))
@@ -87,6 +89,9 @@ lustre_parse_predicate(struct find_context *ctx, int *arg_idx)
     switch (predicate) {
     case LPRED_EXPIRED_AT:
         filter = expired_at2filter(ctx->argv[++i]);
+        break;
+    case LPRED_EXPIRED_IN:
+        filter = expired_in2filter(ctx->argv[++i]);
         break;
     case LPRED_FID:
         filter = fid2filter(ctx->argv[++i]);

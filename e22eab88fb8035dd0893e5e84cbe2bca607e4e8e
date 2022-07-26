@@ -71,6 +71,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2c3672e_acce2571",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-26T09:19:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39224b33_7fdfb542",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 23
+      },
+      "revId": "e22eab88fb8035dd0893e5e84cbe2bca607e4e8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2cbec42_772c5827",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-26T09:19:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fc29328c_7bb2da5a",
+      "range": {
+        "startLine": 104,
+        "startChar": 68,
+        "endLine": 105,
+        "endChar": 5
+      },
+      "revId": "e22eab88fb8035dd0893e5e84cbe2bca607e4e8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa38a552_210fcfc8",
@@ -94,6 +142,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "612f8dc4_ab7ebf11",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-26T09:19:26Z",
+      "side": 1,
+      "message": "Yes. Done.",
+      "parentUuid": "fa38a552_210fcfc8",
+      "range": {
+        "startLine": 110,
+        "startChar": 31,
+        "endLine": 110,
+        "endChar": 38
+      },
+      "revId": "e22eab88fb8035dd0893e5e84cbe2bca607e4e8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "87eade98_89ac876a",
@@ -107,6 +179,30 @@
       "writtenOn": "2022-07-25T12:52:05Z",
       "side": 1,
       "message": "minor: I find the name \u0027expired-at\u0027 a bit misleading. It suggests that the input should be an absolute time (e.g. \u0027-expired-at \"12:00 June 19 22\"\u0027). It seems to me that a user would interpret this as: \"give me all the files that expired at that specific timestamp.\n\nThe only alternative I have is \u0027-expired-since\u0027 or simply \u0027-expired\u0027 (but is not as clear).",
+      "range": {
+        "startLine": 70,
+        "startChar": 34,
+        "endLine": 70,
+        "endChar": 45
+      },
+      "revId": "e22eab88fb8035dd0893e5e84cbe2bca607e4e8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10b233cb_01d1e163",
+        "filename": "tests/test_expired_at.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-26T09:19:26Z",
+      "side": 1,
+      "message": "Went with \u0027expired\u0027.",
+      "parentUuid": "87eade98_89ac876a",
       "range": {
         "startLine": 70,
         "startChar": 34,

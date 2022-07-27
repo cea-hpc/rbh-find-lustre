@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10ce948b_27504118",
+        "filename": "README.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-27T08:05:52Z",
+      "side": 1,
+      "message": "minor: +$()",
+      "range": {
+        "startLine": 114,
+        "startChar": 19,
+        "endLine": 114,
+        "endChar": 21
+      },
+      "revId": "9920b048fe6f3781ce4f2249d4969e8facf618be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

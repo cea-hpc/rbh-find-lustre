@@ -47,13 +47,15 @@ struct rbh_filter *
 ost_index2filter(const char *ost_index);
 
 /**
- * Build a filter for the -expired-at predicate
+ * Build a filter for the -expired predicate
  *
- * @param ost_index    a string representing an epoch
+ * @param expired      the next argument in the command line or NULL
+ * @param idx          the index of the current argument in the command line,
+ *                     increased if an epoch is given to the -expired filter
  *
  * @return             a pointer to a newly allocated struct rbh_filter
  */
 struct rbh_filter *
-expired_at2filter(const char *expired_at);
+expired2filter(const char *expired, int *idx);
 
 #endif

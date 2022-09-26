@@ -101,17 +101,18 @@ exact OST index.
 -expired-at
 ----
 
-rbh-lfind defines a ``-expired-at`` action that filters entries which
+rbh-lfind defines a ``-expired`` action that filters entries which
 expired or will expire at a given epoch. The expiration date is defined
-by the extended attribute 'user.ccc_expires_at'.
+by the extended attribute 'user.ccc_expires_at', and can either be absolute
+or relative to the maximum between the atime, ctime and mtime.
 
 .. code:: bash
 
-    rbh-find rbh:mongo:test -expired-at $(date +%s)
+    rbh-find rbh:mongo:test -expired $(date +%s)
     ./dir/file-that-just-expired
 
-    rbh-find rbh:mongo:test -expired-at $(date +%s) -o \
-        -expired-at +$(date +%s -d "5 minutes")
+    rbh-find rbh:mongo:test -expired $(date +%s) -o \
+        -expired +$(date +%s -d "5 minutes")
     ./dir/file-that-just-expired
     ./dir/file-that-will-expire-in-10-minutes
     ./dir/file-that-will-expire-in-2-days

@@ -25,14 +25,14 @@ cd "$LUSTRE_DIR"
 
 test_invalid()
 {
-    rbh_lfind "rbh:mongo:$testdb" -expired-at $(echo 2^64 | bc) &&
-        error "find with an expired-at epoch too big should have failed"
+    rbh_lfind "rbh:mongo:$testdb" -expired $(echo 2^64 | bc) &&
+        error "find with an expired epoch too big should have failed"
 
-    rbh_lfind "rbh:mongo:$testdb" -expired-at 42blob &&
-        error "find with an invalid expired-at epoch should have failed"
+    rbh_lfind "rbh:mongo:$testdb" -expired 42blob &&
+        error "find with an invalid expired epoch should have failed"
 
-    rbh_lfind "rbh:mongo:$testdb" -expired-at invalid &&
-        error "find with an invalid expired-at epoch should have failed"
+    rbh_lfind "rbh:mongo:$testdb" -expired invalid &&
+        error "find with an invalid expired epoch should have failed"
 
     return 0
 }
@@ -49,30 +49,30 @@ test_expired_files()
     local timeD="$(($(date +%s) + 100))"
 
     touch "$fileA"
-    setfattr -n user.ccc_expires_at -v "$timeA" "$fileA"
+    setfattr -n user.ccc_expires -v "$timeA" "$fileA"
 
     touch "$fileB"
-    setfattr -n user.ccc_expires_at -v "$timeB" "$fileB"
+    setfattr -n user.ccc_expires -v "$timeB" "$fileB"
 
     touch "$fileC"
-    setfattr -n user.ccc_expires_at -v "$timeC" "$fileC"
+    setfattr -n user.ccc_expires -v "$timeC" "$fileC"
 
     touch "$fileD"
-    setfattr -n user.ccc_expires_at -v "$timeD" "$fileD"
+    setfattr -n user.ccc_expires -v "$timeD" "$fileD"
 
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
 
-    rbh_lfind "rbh:mongo:$testdb" -expired-at $(date +%s) | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired $(date +%s) | sort |
         difflines
-    rbh_lfind "rbh:mongo:$testdb" -expired-at $timeA | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired $timeA | sort |
         difflines "/$fileA"
-    rbh_lfind "rbh:mongo:$testdb" -expired-at +$timeA | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired +$timeA | sort |
         difflines "/$fileB" "/$fileD"
-    rbh_lfind "rbh:mongo:$testdb" -expired-at -$timeD | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired -$timeD | sort |
         difflines "/$fileA" "/$fileB" "/$fileC"
-    rbh_lfind "rbh:mongo:$testdb" -expired-at +$timeD | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired +$timeD | sort |
         difflines
-    rbh_lfind "rbh:mongo:$testdb" -expired-at -$timeC | sort |
+    rbh_lfind "rbh:mongo:$testdb" -expired -$timeC | sort |
         difflines
 }
 

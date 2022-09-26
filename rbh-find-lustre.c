@@ -44,7 +44,7 @@ lustre_predicate_or_action(const char *string)
     case '-':
         switch (string[1]) {
         case 'e':
-            if (!strcmp(&string[2], "xpired-at"))
+            if (!strcmp(&string[2], "xpired"))
                 return CLT_PREDICATE;
             break;
         case 'f':
@@ -70,12 +70,13 @@ static struct rbh_filter *
 lustre_parse_predicate(struct find_context *ctx, int *arg_idx)
 {
     struct rbh_filter *filter;
+    bool required_arg;
     int i = *arg_idx;
     int predicate;
 
-    predicate = str2lustre_predicate(ctx->argv[i]);
+    predicate = str2lustre_predicate(ctx->argv[i], &required_arg);
 
-    if (i + 1 >= ctx->argc)
+    if (required_arg && i + 1 >= ctx->argc)
         error(EX_USAGE, 0, "missing argument to `%s'", ctx->argv[i]);
 
     /* In the following block, functions should call error() themselves rather
@@ -85,8 +86,9 @@ lustre_parse_predicate(struct find_context *ctx, int *arg_idx)
      * precise and meaningul error messages.
      */
     switch (predicate) {
-    case LPRED_EXPIRED_AT:
-        filter = expired_at2filter(ctx->argv[++i]);
+    case LPRED_EXPIRED:
+        filter = expired2filter(i + 1 >= ctx->argc ? NULL : ctx->argv[i + 1],
+                                &i);
         break;
     case LPRED_FID:
         filter = fid2filter(ctx->argv[++i]);

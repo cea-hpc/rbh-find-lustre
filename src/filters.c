@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sysexits.h>
+#include <time.h>
 
 #include <lustre/lustreapi.h>
+
+#include <robinhood/statx.h>
 
 #include <robinhood/backend.h>
 #include <rbh-find/filters.h>
@@ -20,14 +23,14 @@
 #include "filters.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
-    [LPRED_EXPIRED_AT - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
-                                      .xattr = "user.ccc_expires_at"},
-    [LPRED_FID - LPRED_MIN] =        {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "fid"},
-    [LPRED_HSM_STATE - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "hsm_state"},
-    [LPRED_OST_INDEX - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "ost"},
+    [LPRED_EXPIRED_ABS - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                       .xattr = "user.ccc_expires_abs"},
+    [LPRED_FID - LPRED_MIN] =         {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "fid"},
+    [LPRED_HSM_STATE - LPRED_MIN] =   {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "hsm_state"},
+    [LPRED_OST_INDEX - LPRED_MIN] =   {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "ost"},
 };
 
 static enum hsm_states
@@ -169,14 +172,41 @@ ost_index2filter(const char *ost_index)
 }
 
 struct rbh_filter *
-expired_at2filter(const char *expired_at)
+expired2filter(const char *expired, int *idx)
 {
-    struct rbh_filter *result = numeric2filter(
-        &predicate2filter_field[LPRED_EXPIRED_AT - LPRED_MIN], expired_at);
+    struct rbh_filter_field xattrs_rel = { .fsentry = RBH_FP_INODE_XATTRS,
+                                           .xattr = "user.ccc_expires_rel"};
+    struct rbh_filter_field statx_rel = { .fsentry = RBH_FP_STATX,
+                                          .statx = RBH_STATX_ATIME_SEC};
+    struct rbh_filter_field expire_rel = { .fsentry = RBH_FP_ADD,
+                                           .compute = {
+                                              .fieldA = &statx_rel,
+                                              .fieldB = &xattrs_rel}};
+    struct rbh_filter *filter_rel;
+    struct rbh_filter *filter_abs;
+    char epoch[12];
+    time_t now;
 
-    if (!result)
-        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired_at,
-              lustre_predicate2str(LPRED_EXPIRED_AT));
+    if (expired == NULL ||
+        ((expired[0] == '-' || expired[0] == '+') && !isdigit(expired[1])) ||
+        (expired[0] != '-' && expired[0] != '+' && !isdigit(expired[0]))) {
+        now = time(NULL);
+        sprintf(epoch, "%ld", now);
+    } else {
+        strncpy(epoch, expired, strlen(expired));
+        (*idx)++;
+    }
 
-    return result;
+    filter_abs = numeric2filter(
+        &predicate2filter_field[LPRED_EXPIRED_ABS - LPRED_MIN], epoch);
+    if (!filter_abs)
+        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired,
+              lustre_predicate2str(LPRED_EXPIRED));
+
+    filter_rel = numeric2filter(&expire_rel, epoch);
+    if (!filter_rel)
+        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired,
+              lustre_predicate2str(LPRED_EXPIRED));
+
+    return filter_or(filter_abs, filter_rel);;
 }

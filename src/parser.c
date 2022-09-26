@@ -17,14 +17,18 @@
 #include "parser.h"
 
 int
-str2lustre_predicate(const char *string)
+str2lustre_predicate(const char *string, bool *required_arg)
 {
     assert(string[0] == '-');
 
+    *required_arg = true;
+
     switch (string[1]) {
     case 'e':
-        if (strcmp(&string[2], "xpired-at") == 0)
-            return LPRED_EXPIRED_AT;
+        if (strcmp(&string[2], "xpired") == 0) {
+            *required_arg = false;
+            return LPRED_EXPIRED;
+        }
         break;
     case 'f':
         if (strcmp(&string[2], "id") == 0)
@@ -44,10 +48,12 @@ str2lustre_predicate(const char *string)
 }
 
 static const char *__lustre_predicate2str[] = {
-    [LPRED_EXPIRED_AT - LPRED_MIN] = "expired-at",
-    [LPRED_FID - LPRED_MIN]        = "fid",
-    [LPRED_HSM_STATE - LPRED_MIN]  = "hsm-state",
-    [LPRED_OST_INDEX - LPRED_MIN]  = "ost",
+    [LPRED_EXPIRED - LPRED_MIN]     = "expired",
+    [LPRED_EXPIRED_ABS - LPRED_MIN] = "expired",
+    [LPRED_EXPIRED_REL - LPRED_MIN] = "expired",
+    [LPRED_FID - LPRED_MIN]         = "fid",
+    [LPRED_HSM_STATE - LPRED_MIN]   = "hsm-state",
+    [LPRED_OST_INDEX - LPRED_MIN]   = "ost",
 };
 
 const char *

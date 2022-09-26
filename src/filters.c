@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sysexits.h>
+#include <time.h>
 
 #include <lustre/lustreapi.h>
+
+#include <robinhood/statx.h>
 
 #include <robinhood/backend.h>
 #include <rbh-find/filters.h>
@@ -20,14 +23,16 @@
 #include "filters.h"
 
 static const struct rbh_filter_field predicate2filter_field[] = {
-    [LPRED_EXPIRED_AT - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
-                                      .xattr = "user.ccc_expires_at"},
-    [LPRED_FID - LPRED_MIN] =        {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "fid"},
-    [LPRED_HSM_STATE - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "hsm_state"},
-    [LPRED_OST_INDEX - LPRED_MIN] =  {.fsentry = RBH_FP_NAMESPACE_XATTRS,
-                                      .xattr = "ost"},
+    [LPRED_EXPIRED_ABS - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                       .xattr = "user.ccc_expires_abs"},
+    [LPRED_EXPIRED_REL - LPRED_MIN] = {.fsentry = RBH_FP_INODE_XATTRS,
+                                       .xattr = "user.ccc_expires_rel"},
+    [LPRED_FID - LPRED_MIN] =         {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "fid"},
+    [LPRED_HSM_STATE - LPRED_MIN] =   {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "hsm_state"},
+    [LPRED_OST_INDEX - LPRED_MIN] =   {.fsentry = RBH_FP_NAMESPACE_XATTRS,
+                                       .xattr = "ost"},
 };
 
 static enum hsm_states
@@ -169,14 +174,61 @@ ost_index2filter(const char *ost_index)
 }
 
 struct rbh_filter *
-expired_at2filter(const char *expired_at)
+expiration2filter(const char *expired)
 {
-    struct rbh_filter *result = numeric2filter(
-        &predicate2filter_field[LPRED_EXPIRED_AT - LPRED_MIN], expired_at);
+    struct rbh_filter *filter_abs;
+    struct rbh_filter *filter_rel;
 
-    if (!result)
-        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired_at,
+    filter_abs = numeric2filter(
+        &predicate2filter_field[LPRED_EXPIRED_ABS - LPRED_MIN], expired);
+    if (!filter_abs)
+        error(EXIT_FAILURE, errno, "numeric2filter");
+
+    filter_rel = numeric2filter(
+        &predicate2filter_field[LPRED_EXPIRED_REL - LPRED_MIN], expired);
+    if (!filter_rel)
+        error(EXIT_FAILURE, errno, "numeric2filter");
+
+    return filter_or(filter_abs, filter_rel);
+}
+
+struct rbh_filter *
+expired2filter()
+{
+    struct rbh_filter *ret;
+    char *epoch;
+    time_t now;
+
+    now = time(NULL);
+    asprintf(&epoch, "-%ld", now);
+    if (epoch == NULL)
+        error(EXIT_FAILURE, ENOMEM, "asprintf");
+
+    ret = expiration2filter(epoch);
+    if (ret == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "expired2filter");
+
+    return ret;
+}
+
+struct rbh_filter *
+expired_at2filter(const char *expired)
+{
+    struct rbh_filter *ret;
+
+    if (!isdigit(expired[0]) && expired[0] != '+' && expired[0] != '-')
+        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired,
               lustre_predicate2str(LPRED_EXPIRED_AT));
 
-    return result;
+    if ((expired[0] == '+' || expired[0] == '-') && !isdigit(expired[1]))
+        error(EXIT_FAILURE, errno, "invalid argument `%s' to `%s'", expired,
+              lustre_predicate2str(LPRED_EXPIRED_AT));
+
+    ret = expiration2filter(expired);
+    if (ret == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "expired_at2filter");
+
+    return ret;
 }

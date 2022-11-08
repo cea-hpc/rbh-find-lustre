@@ -3,6 +3,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9dc8c49e_b00768bf",
+        "filename": "include/filters.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "minor: this is not true since in a case like this: rbh-find \"...\" -expired -name toto\n\nYou pass \"-name\" and the function is not supposed to fail in your implementation.",
+      "range": {
+        "startLine": 52,
+        "startChar": 45,
+        "endLine": 52,
+        "endChar": 53
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cd11813_fadb6877",
+        "filename": "include/parser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 33,
+        "startChar": 56,
+        "endLine": 33,
+        "endChar": 60
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a121f1ca_5f22bc17",
+        "filename": "include/parser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "suggest: true if the predicate requires and argument\n\nquestion: it is unclear to me what this boolean reprensents. I see 3 possible options: 1 argument, no arguments or an optional argument. I suppose that false means no argument but what does true mean?",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 34,
+        "endChar": 49
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a83f67b3_01fca2f2",
         "filename": "src/filters.c",
         "patchSetId": 2
@@ -26,6 +95,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d5281551_ce84bed4",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "minor: I don\u0027t know what the appropriate size should be here since time_t seems to be a signed 32 bits integer 12 is enough.",
+      "range": {
+        "startLine": 202,
+        "startChar": 15,
+        "endLine": 202,
+        "endChar": 17
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "721f8444_9ee754cb",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "question: I\u0027m not sure about your third condition c !\u003d \u0027-\u0027 \u0026\u0026 c !\u003d \u0027+\u0027 \u0026\u0026 !isdigit(c). What kind of CLI argument would be valid other than something that start with \u0027-\u0027 or an epoch after \u0027-expired\u0027?",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 7
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9dd39c5_aa337bcc",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "suggest: I think c ! \u0027-\u0027 \u0026\u0026 c !\u003d \u0027+\u0027 \u0026\u0026 !isdigit(c) is equivalent to !isdigit(c)",
+      "range": {
+        "startLine": 207,
+        "startChar": 51,
+        "endLine": 207,
+        "endChar": 71
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfcae6b7_72a7dc75",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "defect: this should be sizeof(epoch) not expired otherwise a buffer overflow is possible. You should check how many bits where written to epoch and return an error in case strlen(expired) \u003e sizeof(epoch).\n\nAlso, I don\u0027t know if 12 is enough for the size. The man page seems to indicate that using a time_t leads to undefiened behavior if sizeof(time_t) \u003d\u003d 4 after 2038. I guess we should have an assertion at compile time for the size of time_t so that we know it\u0027s size. Not sure how to handle this best. How is it done for other timestamps such as atime for example?",
+      "range": {
+        "startLine": 211,
+        "startChar": 7,
+        "endLine": 211,
+        "endChar": 15
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "64a029f7_813cb751",
         "filename": "src/filters.c",
         "patchSetId": 2
@@ -42,6 +203,29 @@
         "startChar": 11,
         "endLine": 248,
         "endChar": 39
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e65aeb_5d4b7fbd",
+        "filename": "src/parser.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-08T10:02:31Z",
+      "side": 1,
+      "message": "major: how can you differentiate them if they have the same name?",
+      "range": {
+        "startLine": 52,
+        "startChar": 39,
+        "endLine": 52,
+        "endChar": 46
       },
       "revId": "518fed6adaee8da249558f354b38593dbd53186f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"

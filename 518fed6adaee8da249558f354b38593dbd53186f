@@ -165,6 +165,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d63a158e_58363de0",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-08T11:44:00Z",
+      "side": 1,
+      "message": "I\u0027ll explain what I thought : the condition is `a || (b || c)`, `a` checks if `-expired` is the last part of the command line, and if so, we use the current time. `b` checks if the following argument of the line is `-something` or `+something`, in which case it is not a valid number and we use the current epoch (and we don\u0027t skip the next argument of the line, so it\u0027ll be interpreted as it should). `c` checks that the argument does not start with a `-`, `+` or a number, in which case we use the current epoch, and consider this argument is a \"normal\" value to check later on.\n\nSo `rbh-lfind -expired`, `rbh-lfind -expired -name toto`, `rbh-lfind -expired blob` are all interpreted \"properly\", as in we use the current epoch as argument to `-expired` (and the command will fail with the third one).",
+      "parentUuid": "2dd4c35d_ec2670ac",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 7
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c9dd39c5_aa337bcc",
         "filename": "src/filters.c",
         "patchSetId": 2
@@ -200,6 +224,30 @@
       "side": 1,
       "message": "It will catch `+12345` no?",
       "parentUuid": "c9dd39c5_aa337bcc",
+      "range": {
+        "startLine": 207,
+        "startChar": 51,
+        "endLine": 207,
+        "endChar": 71
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1509e60d_1274bb66",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-08T11:44:00Z",
+      "side": 1,
+      "message": "Yes, +12345 and -12345 are still valid comparison values, which would not be caught if we use `!isdigit(c)`",
+      "parentUuid": "bcb25435_4a847da1",
       "range": {
         "startLine": 207,
         "startChar": 51,

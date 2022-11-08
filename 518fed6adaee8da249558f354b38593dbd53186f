@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a83f67b3_01fca2f2",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-11-08T08:12:18Z",
+      "side": 1,
+      "message": "question: even if they are not used yet, is it interesting to define the fields for expired and expired_rel? or do you want to wait for their implementation to be done?",
+      "range": {
+        "startLine": 25,
+        "startChar": 37,
+        "endLine": 25,
+        "endChar": 59
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64a029f7_813cb751",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-11-08T08:12:18Z",
+      "side": 1,
+      "message": "question: I don\u0027t remember well here, is this the expected behavior? maybe check for two is sufficient enough?",
+      "range": {
+        "startLine": 246,
+        "startChar": 11,
+        "endLine": 248,
+        "endChar": 39
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e75a03eb_74d83ba0",
+        "filename": "tests/test_expired.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-11-08T08:12:18Z",
+      "side": 1,
+      "message": "typo: expired (same below)",
+      "range": {
+        "startLine": 29,
+        "startChar": 28,
+        "endLine": 29,
+        "endChar": 38
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

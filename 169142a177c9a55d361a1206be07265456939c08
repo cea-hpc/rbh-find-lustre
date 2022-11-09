@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e50a5ded_74ef3dc6",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-09T15:30:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c1b164d_1fa8bce5",
+      "range": {
+        "startLine": 101,
+        "startChar": 9,
+        "endLine": 101,
+        "endChar": 11
+      },
+      "revId": "169142a177c9a55d361a1206be07265456939c08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca256c52_7a46cdf5",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-11-09T14:53:36Z",
       "side": 1,
       "message": "major: you should also explain the meaning of -\u003cn\u003e and +\u003cn\u003e as it may not be that obvious.",
+      "range": {
+        "startLine": 107,
+        "startChar": 56,
+        "endLine": 107,
+        "endChar": 62
+      },
+      "revId": "169142a177c9a55d361a1206be07265456939c08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d3188e8_774bb0c5",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-09T15:30:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca256c52_7a46cdf5",
       "range": {
         "startLine": 107,
         "startChar": 56,

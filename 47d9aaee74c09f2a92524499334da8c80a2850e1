@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b9da38d_fb9b9d08",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-11-21T13:04:33Z",
+      "side": 1,
+      "message": "commit message says rel will be modified when this is implemented, but this already seems to assume it is? does it just mean this code isn\u0027t tested and will get a follow up?",
+      "revId": "47d9aaee74c09f2a92524499334da8c80a2850e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04433422_e5740114",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-11-21T13:04:33Z",
+      "side": 1,
+      "message": "too late for me to properly review this: just a high level comment wrt ccc expired abs/rel: I\u0027m sure you\u0027ve discussed that in a meeting or something, but what\u0027s the rationale to rel? Expires after x seconds from the latest of ctime/atime/mtime, so when a file gets accessed its lifespan gets extended \"as usual\" when we were considering the oldest files to purge without that attribute, whereas the plain expire abs date isn\u0027t extended unless manually modified?\n\nIf you\u0027re doing \u0027or\u0027 here you\u0027ll expire a file as soon as either ctime or mtime or atime (err, mtime is missing here?!) match, that doesn\u0027t sound right.\nI think that\u0027s yet another operation that we cannot express with current mongo/rbh predicates, but getting the latest of [acm]time and operating on a single time would be much easier to deal with.\nBetter yet: since you know when [am]time change in the db, you could really only have a single abs time in the db by having the enricher that fetches [am]time also fill in the xattr relative from the latest of these (if you\u0027re familiar with rbh v3, think db triggers); the time in the db is constant as long as [am]time don\u0027t change and that will be orders of magnitute cheaper to query... With the added benefit that I don\u0027t need to review RBH_FP_ADD :p",
+      "revId": "47d9aaee74c09f2a92524499334da8c80a2850e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

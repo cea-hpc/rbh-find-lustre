@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e08eb769_7b6b10a8",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-25T13:20:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b9da38d_fb9b9d08",
+      "revId": "47d9aaee74c09f2a92524499334da8c80a2850e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04433422_e5740114",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-11-21T13:04:33Z",
       "side": 1,
       "message": "too late for me to properly review this: just a high level comment wrt ccc expired abs/rel: I\u0027m sure you\u0027ve discussed that in a meeting or something, but what\u0027s the rationale to rel? Expires after x seconds from the latest of ctime/atime/mtime, so when a file gets accessed its lifespan gets extended \"as usual\" when we were considering the oldest files to purge without that attribute, whereas the plain expire abs date isn\u0027t extended unless manually modified?\n\nIf you\u0027re doing \u0027or\u0027 here you\u0027ll expire a file as soon as either ctime or mtime or atime (err, mtime is missing here?!) match, that doesn\u0027t sound right.\nI think that\u0027s yet another operation that we cannot express with current mongo/rbh predicates, but getting the latest of [acm]time and operating on a single time would be much easier to deal with.\nBetter yet: since you know when [am]time change in the db, you could really only have a single abs time in the db by having the enricher that fetches [am]time also fill in the xattr relative from the latest of these (if you\u0027re familiar with rbh v3, think db triggers); the time in the db is constant as long as [am]time don\u0027t change and that will be orders of magnitute cheaper to query... With the added benefit that I don\u0027t need to review RBH_FP_ADD :p",
+      "revId": "47d9aaee74c09f2a92524499334da8c80a2850e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b748c872_6a85ce47",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-25T13:20:48Z",
+      "side": 1,
+      "message": "Yes, ccc_expires_abs will have to be manually modified. It is usefull when one considers removing an OST for instance.\n\nmtime wasn\u0027t missing, it is on the very next line.\n\nRBH_FP_ADD was added so that mongo could manage such operations.\n\nWe thought about doing what you suggested during design phase, but that idea was set aside... but none of us remember why... It is indeed much easier, especially since we are now more knowledgeable with rbh-fsevents.\n\nSo Done.",
+      "parentUuid": "04433422_e5740114",
       "revId": "47d9aaee74c09f2a92524499334da8c80a2850e1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

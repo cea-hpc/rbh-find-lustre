@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e4da13_34012e55",
+        "filename": "include/filters.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-25T13:20:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "45fd1cb1_5c8881c3",
+      "range": {
+        "startLine": 52,
+        "startChar": 45,
+        "endLine": 52,
+        "endChar": 53
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0cd11813_fadb6877",
@@ -355,6 +379,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dad6694_33fc588a",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-25T13:20:48Z",
+      "side": 1,
+      "message": "After discussing it again, we will go with two separate predicates, \"expired-at\" which takes an argument, and \"expired\" which takes no arguments but behaves like\"expired-at -$(date +%s)\".\n\nWill be done in another patch though.",
+      "parentUuid": "fbd314d8_9f9cad5c",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 7
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9dd39c5_aa337bcc",
@@ -416,6 +464,30 @@
       "side": 1,
       "message": "Yes, +12345 and -12345 are still valid comparison values, which would not be caught if we use `!isdigit(c)`",
       "parentUuid": "bcb25435_4a847da1",
+      "range": {
+        "startLine": 207,
+        "startChar": 51,
+        "endLine": 207,
+        "endChar": 71
+      },
+      "revId": "518fed6adaee8da249558f354b38593dbd53186f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "066bcccd_fe0fe612",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-11-25T13:20:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1509e60d_1274bb66",
       "range": {
         "startLine": 207,
         "startChar": 51,

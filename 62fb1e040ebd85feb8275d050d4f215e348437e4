@@ -142,6 +142,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c6b081f_1d251e0b",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-30T08:07:06Z",
+      "side": 1,
+      "message": "It seems fine with the \"file-that-expired-1-hour-ago\" now.",
+      "parentUuid": "5c02d4c1_9b8f2c43",
+      "range": {
+        "startLine": 119,
+        "startChar": 20,
+        "endLine": 119,
+        "endChar": 24
+      },
+      "revId": "62fb1e040ebd85feb8275d050d4f215e348437e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a2af651_f3a5989d",
@@ -179,6 +203,30 @@
       "side": 1,
       "message": "Exact, I was confused with the other section aswell, but clarified.",
       "parentUuid": "0a2af651_f3a5989d",
+      "range": {
+        "startLine": 136,
+        "startChar": 10,
+        "endLine": 136,
+        "endChar": 21
+      },
+      "revId": "62fb1e040ebd85feb8275d050d4f215e348437e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ebaf05c_3592ee43",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-30T08:07:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ac5d8f0f_b24c49ca",
       "range": {
         "startLine": 136,
         "startChar": 10,

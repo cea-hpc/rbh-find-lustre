@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "584ed63d_1b78f8ee",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2023-02-17T14:37:11Z",
+      "side": 1,
+      "message": "question: will it be interesting to first filter regular files?\n\nBecause, if a type filter is faster than an hsm_state one, this can be an improvement to only check the hsm_state of regular files?",
+      "revId": "afeca22db9c6f5fa9b94d51b70e56f519da7749b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8d117ef_bcaa6903",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2023-02-17T14:37:11Z",
+      "side": 1,
+      "message": "nit: I do not think this is mandatory",
+      "range": {
+        "startLine": 29,
+        "startChar": 17,
+        "endLine": 29,
+        "endChar": 18
+      },
+      "revId": "afeca22db9c6f5fa9b94d51b70e56f519da7749b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

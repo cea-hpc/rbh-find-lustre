@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d85a3266_1030e126",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2023-03-03T08:05:26Z",
+      "side": 1,
+      "message": "question: why not use __func__?",
+      "range": {
+        "startLine": 104,
+        "startChar": 26,
+        "endLine": 104,
+        "endChar": 44
+      },
+      "revId": "0685046857e3886613d11a7434cd8f3eaec35099",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -7,7 +7,7 @@
 project(
 	'rbh-find-lustre',
 	'c',
-	version: '0.0.0',
+	version: '0.1.0',
 	license: 'LGPL3.0-or-later',
 	default_options: [
 		'warning_level=3',
@@ -15,8 +15,8 @@ project(
 	],
 )
 
-librobinhood = dependency('robinhood', version: '>=0.0.0')
-librbhfind = dependency('rbh-find', version: '>=0.0.0')
+librobinhood = dependency('robinhood', version: '>=0.1.0')
+librbhfind = dependency('rbh-find', version: '>=0.1.0')
 
 liblustre = dependency('lustre')
 
@@ -52,3 +52,19 @@ executable(
 	install: true,
 )
 subdir('tests')
+
+specfile = configuration_data()
+specfile.set('version', meson.project_version())
+configure_file(
+    input: 'rbh-find-lustre.spec.in',
+    output: 'rbh-find-lustre.spec',
+    configuration: specfile,
+)
+
+meson.add_dist_script('utils/add_specfile_to_dist.sh')
+custom_target('rpm',
+    output: 'rbh-find-lustre-' + meson.project_version() + '.rpm',
+    command: [
+        '../utils/make_rpm.sh', meson.current_build_dir(), meson.project_version()
+    ],
+)

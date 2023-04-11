@@ -1,0 +1,41 @@
+Name:    rbh-find-lustre
+Version: @version@
+Release: 1%{?dist}
+Summary: Query tool for Lustre attributes for RobinHood V4
+
+Group:   Applications/System
+License: LGPLv3
+URL:     https://github.com/cea-hpc/rbh-find-lustre.git
+Source0: %{name}-%{version}.tar.xz
+
+Requires: rbh-find-devel
+Requires: lustre-client
+
+BuildRequires: meson
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: check-devel
+BuildRequires: rbh-find-devel
+BuildRequires: lustre-client
+
+%description
+The query tool for the RobinHood project. It queries a backend metadata and can
+filter through entries according to Lustre specific attributes.
+
+%prep
+%autosetup
+
+%build
+%meson
+%meson_build
+
+%install
+%meson_install
+
+%files
+%{_bindir}/rbh-lfind
+
+%changelog
+
+* Tue Apr 11 2023 - Yoann Valeri <yoann.valeri@cea.fr> - 0.1-1
+- First version

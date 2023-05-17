@@ -41,7 +41,7 @@ test_none()
     archive_file "archived"
     rbh-sync "rbh:lustre:." "rbh:mongo:$testdb"
 
-    rbh_lfind "rbh:mongo:$testdb" -hsm-state none | sort |
+    rbh_lfind "rbh:mongo:$testdb" -not -xattr ns.xattrs.hsm_state | sort |
         difflines "/none"
     rbh_lfind "rbh:mongo:$testdb" -hsm-state archived | sort |
         difflines "/archived"

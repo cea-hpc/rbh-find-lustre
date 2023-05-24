@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0649b3b0_a1bd9070",
+        "filename": "tests/test_hsm_state.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2023-05-24T12:04:57Z",
+      "side": 1,
+      "message": "major: rather than having to do this every time, changing the filter created when given \"none\" is better. You would have to make a filter that would check do an `and` on two subfilters which would check the type of the file and that the xattr hsm_state does not exists (I think it\u0027s better to check this attribute than the check the one Lustre sets).",
+      "range": {
+        "startLine": 44,
+        "startChar": 34,
+        "endLine": 44,
+        "endChar": 65
+      },
+      "revId": "d5c9768acfe6e78256060b04edb0936992e9acb7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
